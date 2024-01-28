@@ -1,0 +1,29 @@
+<div class="top-section">
+    <div class="logo-div hover" routerLink="/">
+        <img src="../../../assets/images/logo.png" class="logo">
+    </div>    
+    <div class="location-div hover">
+        <img src="../../../assets/images/location-pin.png" class="location-icon">
+        <p class="location-txt">
+            <label class="grey-txt">Deliver to</label><br>
+            <label class="bold-txt">{{ country }}</label>
+        </p>
+    </div>
+    <div class="search-div" id="search_bar">
+        <select id="resizing_select" (click)="onSelectClick()" [(ngModel)]="selectedCategory">
+            <option value="" class="placeholder" disabled selected hidden>All</option>
+            <option *ngFor="let category of categories" [value]='category'>{{ category }}</option>
+        </select>
+        <select style="display:none;visibility:hidden;" id="width_tmp_select"><option id="width_tmp_option"></option></select>
+        <input type="text" placeholder="Search Amazon">
+        <button><img src="../../../assets/images/search-icon.png" class="search-icon"></button>
+    </div>
+    <div class="language-div hover">
+        <img [src]="selectedLanguage.iconPath" class="language-icon">
+        <label>{{ selectedLanguage.code }}</label>
+    </div>
+</div>
+
+<div class="bottom-section">
+
+</div>

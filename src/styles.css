@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url('assets/fonts/amazon-ember/AmazonEmber_Rg.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amazon Ember Bold';
+    src: url('assets/fonts/amazon-ember/AmazonEmber_Bd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amazon Ember Light';
+    src: url('assets/fonts/amazon-ember/AmazonEmber_Lt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    font-family: Amazon Ember;
+}
