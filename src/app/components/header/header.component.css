@@ -1,5 +1,7 @@
+
 .top-section {
-    width: 100vw;
+    width: auto;
+    min-width: 100vw;
     position: relative;
     background-color: #131921;
     color: #fff;
@@ -12,11 +14,14 @@
 .bottom-section {
     position: relative;
     background-color: #232f3e;
+    width: auto;
+    min-width: 100vw;
     color: #fff;
-    padding: 4px 0;
-    margin: -8px;
-    height: 30px;
-    display: inline-flex ;
+    margin-left: -8px;
+    margin-top: 8px;
+    height: 38px;
+    display: inline-flex;
+    font-size: 16px;
 }
 
 .logo-div {
@@ -72,6 +77,7 @@
     display: inline-flex ;
     border: 2.5px solid transparent;
     margin-left: 5px;
+    max-width: 60vw;
 }
 
 p {
@@ -84,7 +90,7 @@ label {
     font-size: 13px;
     line-height: 14px;
     font-weight: 400;
-    margin-top: 4px 
+    margin-top: 4px;
 }
 
 .bold-txt {
@@ -95,6 +101,7 @@ label {
 .hover:hover {
     cursor:pointer;
     border: solid 0.5px rgba(167, 167, 167, 0.738);
+    border-radius: 2px;
 }
 
 .grey-txt {
@@ -116,7 +123,7 @@ select {
     font-size: 12px;
     background-color: #e6e6e6;
     color:#525252;
-    padding: 0 11px;
+    padding: 0 8px;
     outline:none;
     border: 2.5px solid transparent;
     appearance: none;
@@ -161,7 +168,7 @@ input {
     position: relative;
     background-color: #ffffff;
     color: #373737;
-    width: 45vw;
+    width: 55vw;
     min-width: 15vw;
     border-radius: 0;
     margin: 0;
@@ -190,6 +197,7 @@ input::placeholder {
 }
 
 button {
+    right:0;
     position: relative;
     display: inline-block;
     vertical-align: middle;
@@ -233,15 +241,192 @@ button:focus{
 .language-div {
     position: relative;
     height: 29px;
-    width: 65px;
-    text-align: center; 
+    width: 55px;
+    min-width: 55px;
+    text-align: left; 
     padding: 10px 6px;
     margin-left: 5px;
     top:50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    display: inline-flex ;
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%);
+    background-position:
+      calc(100% - 11px) calc(1em + 11px),
+      calc(100% - 7px) calc(1em + 11px);
+    background-size:
+      4px 4px,
+      4px 4px;
+    background-repeat: no-repeat;
 }
 
 .language-icon {
-    height: 20px;
+    position: relative;
+    height: 14px;
+    width: 20px;
+    top: 58%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.language-code {
+    margin-left: 3px;
+    font-size: 14px;
+    top:66%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: relative;
+}
+
+.account-div {
+    position: relative;
+    width: 126px;
+    min-width: 126px;
+    height: 29px;
+    padding: 10px 0;
+    top: -3px;
+    margin-left: 5px;
+    background-image:
+      linear-gradient(45deg, transparent 50%, gray 50%),
+      linear-gradient(135deg, gray 50%, transparent 50%);
+    background-position:
+      calc(100% - 11px) calc(1em + 12px),
+      calc(100% - 7px) calc(1em + 12px);
+    background-size:
+      4px 4px,
+      4px 4px;
+    background-repeat: no-repeat;
+}
+
+.account-txt {
+    display: inline-block;
+    vertical-align: middle;
+    left: 5px;
+    height: 18px;
+    position: relative;
+    top: -3px;
+}
+
+.account-txt:hover {
+    cursor: pointer;
+}
+
+.returns-div {
+    position: relative;
+    width: 72px;
+    min-width: 72px;
+    height: 29px;
+    padding: 10px 0;
+    top: -3px;
+    margin-left: 5px;
+}
+
+.returns-txt {
+    display: inline-block;
+    vertical-align: middle;
+    left: 5px;
+    height: 18px;
+    position: relative;
+    top: -3px;
+}
+
+.returns-txt:hover {
+    cursor: pointer;
+}
+
+.cart-div {
+    position: relative;
+    width: 90px;
+    min-width: 90px;
+    height: 29px;
+    padding: 10px 0;
+    top: -3px;
+    margin-left: 5px;
+    display: inline-flex ;
+}
+
+.cart-icon {
+    height:33px;
+    top: 58%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.product-txt {
+    color: #ff9900;
+    left: 30%;
+    top: -3px;
+    font-size: 16px;
+    position: relative;
+}
+
+.cart-txt:hover {
+    cursor: pointer;
+}
+
+.cart-label {
+    position: relative;
+    left: -5px;
+    top: -72%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu-div {
+    width: 65px;
+    min-width: 65px;
+    height: 33px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu-icon {
+    position: relative;
+    height: 18px;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu-txt {
+    position: relative;
+    display: inline-block;
+    top:33%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin-left: 4px;
+}
+
+.bottom-header-div {
+    padding: 0 9px;
+    height: 33px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.bottom-header-txt {
+    position: relative;
+    display: inline-block;
+    top:33%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.bottom-header-txt:hover {
+    cursor: pointer;
+}
+
+.menu-txt:hover {
+    cursor: pointer;
 }

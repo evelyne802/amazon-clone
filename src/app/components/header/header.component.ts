@@ -59,7 +59,7 @@ export class HeaderComponent {
               "Toys & Games",
               "Video Games",
               "Women's Fashion"];
-
+    productCount : number = 0;
     @ViewChild("search_bar") searchBar: ElementRef | undefined;
 
   constructor(private http:HttpClient) { }
@@ -73,11 +73,11 @@ export class HeaderComponent {
 
       $('#resizing_select').change(function(){
         $("#width_tmp_option").html($('#resizing_select option:selected').text());
-        $(this).width($("#width_tmp_select").width()! + 36);
+        $(this).width($("#width_tmp_select").width()!+60);
       });
     });
-      
   }
+
 
   getGeolocationData()
   {
@@ -88,9 +88,8 @@ export class HeaderComponent {
   }
 
 
-  onSelectClick(){
-    setTimeout(() => {
-      this.searchBar?.nativeElement.focus();
-    }, 0);
+  onSelect(){
+    const searchBar = document.getElementById("search_input") as HTMLElement;
+    window.setTimeout(() => searchBar.focus(), 0);
   }
 }

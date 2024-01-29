@@ -1,0 +1,17 @@
+.temp-header {
+    width: auto;
+    min-width: 100vw;
+    position: relative;
+    background-color: #d8f7eb;
+    color: #0f1111;
+    margin-left: -8px;
+    display: inline-flex ;
+    z-index: -2;
+    animation-duration: 2s;
+    padding: 6px 18px;
+}
+
+.temp-header-txt {
+    font-family: Amazon Ember Bold;
+    font-size: 14px;
+}
