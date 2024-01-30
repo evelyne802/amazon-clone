@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --top-footer-height: 450px;
+}
+
 @font-face {
     font-family: 'Amazon Ember';
     src: url('assets/fonts/amazon-ember/AmazonEmber_Rg.ttf') format('truetype');
@@ -21,5 +25,13 @@
 }
 
 html, body {
+    margin: 0;
+    max-width:100%;
     font-family: Amazon Ember;
+}
+
+@media screen and (max-width: 650px) {
+    body {
+        overflow-x: scroll;
+    }
 }

@@ -1,0 +1,48 @@
+/* .footer{
+    position: relative;
+    max-width: 100vw;
+    height: 600px;
+    box-sizing: border-box;
+} */
+
+.back-to-top {
+    background-color: #37475a;
+    height:17px;
+    padding: 15px 0;
+    color:white;
+    font-family: Amazon Ember;
+    text-align: center;
+}
+
+.back-to-top:hover {
+    background-color: #465a71;
+    cursor: pointer;
+}
+
+/* .top-footer {
+    background-color: #232f3e;
+    height: var(--top-footer-height);
+    padding: 15px 0;
+    color:white;
+    font-family: Amazon Ember;
+    text-align: center;
+} */
+
+.top-footer {
+    width: 100%;
+    background-color: #232f3e;
+    height: var( --top-footer-height);
+    padding: 15px 0;
+    color:white;
+    font-family: Amazon Ember;
+    text-align: center;
+}
+
+.bottom-footer {
+    background-color: #131a22;
+    height: 10em;
+    padding: 10px 0;
+    color:white;
+    font-family: Amazon Ember;
+    text-align: center;
+}

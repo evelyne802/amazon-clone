@@ -1,67 +1,68 @@
-<div class="top-section">
-    <div class="logo-div hover" routerLink="/">
-        <img src="../../../assets/images/logo.png" class="logo">
-    </div>    
-    <div class="location-div hover">
-        <img src="../../../assets/images/location-pin.png" class="location-icon">
-        <p class="location-txt">
-            <label class="grey-txt">Deliver to</label><br>
-            <label class="bold-txt">{{ country }}</label>
-        </p>
+<div class="header">
+    <div class="top-section">
+        <div class="logo-div hover" routerLink="/">
+            <img src="../../../assets/images/logo.png" class="logo">
+        </div>    
+        <div class="location-div hover">
+            <img src="../../../assets/images/location-pin.png" class="location-icon">
+            <p class="location-txt">
+                <label class="grey-txt">Deliver to</label><br>
+                <label class="bold-txt">{{ country }}</label>
+            </p>
+        </div>
+        <div class="search-div" id="search_bar">
+            <select id="resizing_select" (change)="onSelect()" [(ngModel)]="selectedCategory">
+                <option value="" class="placeholder" disabled selected hidden>All</option>
+                <option *ngFor="let category of categories" [value]='category'>{{ category }}</option>
+            </select>
+            <select style="display:none;visibility:hidden;" id="width_tmp_select"><option id="width_tmp_option"></option></select>
+            <input id="search_input" type="text" placeholder="Search Amazon">
+            <button><img src="../../../assets/images/search-icon.png" class="search-icon"></button>
+        </div>
+        <div class="language-div hover">
+            <img [src]="selectedLanguage.iconPath" class="language-icon">
+            <label class="bold-txt language-code">{{ selectedLanguage.code }}</label>
+        </div>
+        <div class="account-div hover">
+            <p class="account-txt">
+                <label>Hello, sign in</label><br>
+                <label class="bold-txt">Account & Lists</label>
+            </p>
+        </div>
+        <div class="returns-div hover">
+            <p class="returns-txt">
+                <label>Returns</label><br>
+                <label class="bold-txt">& Orders</label>
+            </p>
+        </div>
+        <div class="cart-div hover">
+            <p class="cart-txt">
+                <label class="product-txt bold-txt">{{ productCount }}</label><br>
+                <img src="../../../assets/images/cart.png" class="cart-icon">
+                <label class="bold-txt cart-label">Cart</label>
+            </p>
+        </div>
     </div>
-    <div class="search-div" id="search_bar">
-        <select id="resizing_select" (change)="onSelect()" [(ngModel)]="selectedCategory">
-            <option value="" class="placeholder" disabled selected hidden>All</option>
-            <option *ngFor="let category of categories" [value]='category'>{{ category }}</option>
-        </select>
-        <select style="display:none;visibility:hidden;" id="width_tmp_select"><option id="width_tmp_option"></option></select>
-        <input id="search_input" type="text" placeholder="Search Amazon">
-        <button><img src="../../../assets/images/search-icon.png" class="search-icon"></button>
-    </div>
-    <div class="language-div hover">
-        <img [src]="selectedLanguage.iconPath" class="language-icon">
-        <label class="bold-txt language-code">{{ selectedLanguage.code }}</label>
-    </div>
-    <div class="account-div hover">
-        <p class="account-txt">
-            <label>Hello, sign in</label><br>
-            <label class="bold-txt">Account & Lists</label>
-        </p>
-    </div>
-    <div class="returns-div hover">
-        <p class="returns-txt">
-            <label>Returns</label><br>
-            <label class="bold-txt">& Orders</label>
-        </p>
-    </div>
-    <div class="cart-div hover">
-        <p class="cart-txt">
-            <label class="product-txt bold-txt">{{ productCount }}</label><br>
-            <img src="../../../assets/images/cart.png" class="cart-icon">
-            <label class="bold-txt cart-label">Cart</label>
-        </p>
+    
+    <div class="bottom-section">
+        <div class="menu-div hover">
+            <img src="../../../assets/images/menu-icon.png" class="menu-icon">
+            <label class="bold-txt menu-txt">All</label>
+        </div>
+        <div class="bottom-header-div hover">
+            <label class="bottom-header-txt">Today's Deals</label>
+        </div>
+        <div class="bottom-header-div hover">
+            <label class="bottom-header-txt">Customer Service</label>
+        </div>
+        <div class="bottom-header-div hover">
+            <label class="bottom-header-txt">Registry</label>
+        </div>
+        <div class="bottom-header-div hover">
+            <label class="bottom-header-txt">Gift Cards</label>
+        </div>
+        <div class="bottom-header-div hover">
+            <label class="bottom-header-txt">Sell</label>
+        </div>
     </div>
 </div>
-
-<div class="bottom-section">
-    <div class="menu-div hover">
-        <img src="../../../assets/images/menu-icon.png" class="menu-icon">
-        <label class="bold-txt menu-txt">All</label>
-    </div>
-    <div class="bottom-header-div hover">
-        <label class="bottom-header-txt">Today's Deals</label>
-    </div>
-    <div class="bottom-header-div hover">
-        <label class="bottom-header-txt">Customer Service</label>
-    </div>
-    <div class="bottom-header-div hover">
-        <label class="bottom-header-txt">Registry</label>
-    </div>
-    <div class="bottom-header-div hover">
-        <label class="bottom-header-txt">Gift Cards</label>
-    </div>
-    <div class="bottom-header-div hover">
-        <label class="bottom-header-txt">Sell</label>
-    </div>
-</div>
-

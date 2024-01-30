@@ -1,24 +1,29 @@
 
+.header {
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
+    top:8px;
+    box-sizing: border-box;
+}
+
 .top-section {
-    width: auto;
-    min-width: 100vw;
     position: relative;
     background-color: #131921;
     color: #fff;
     padding: 8px 0;
-    margin: -8px;
+    margin-top: -8px;
     height: 45px;
     display: inline-flex ;
+    width: 100%;
+
 }
 
 .bottom-section {
     position: relative;
     background-color: #232f3e;
-    width: auto;
-    min-width: 100vw;
+    width: 100%;
     color: #fff;
-    margin-left: -8px;
-    margin-top: 8px;
     height: 38px;
     display: inline-flex;
     font-size: 16px;
@@ -338,8 +343,8 @@ button:focus{
 
 .cart-div {
     position: relative;
-    width: 90px;
-    min-width: 90px;
+    width: 80px;
+    min-width: 80px;
     height: 29px;
     padding: 10px 0;
     top: -3px;
@@ -417,7 +422,7 @@ button:focus{
 .bottom-header-txt {
     position: relative;
     display: inline-block;
-    top:33%;
+    top:40%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     font-size: 14px;
@@ -430,3 +435,60 @@ button:focus{
 .menu-txt:hover {
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 1286px) {
+    .search-div {
+        max-width: 53vw;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .search-div {
+        max-width: 52vw;
+    }
+}
+
+@media screen and (max-width: 1220px) {
+    .search-div {
+        max-width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .search-div {
+        max-width: 48vw;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .search-div {
+        max-width: 46vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .search-div {
+        max-width: 44vw;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .search-div {
+        max-width: 40vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .search-div {
+        max-width: 38vw;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .search-div {
+        max-width: 36vw;
+    }
+}
+
+
