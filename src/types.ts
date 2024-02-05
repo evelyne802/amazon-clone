@@ -9,3 +9,21 @@ export type Language = {
     code: string;
     iconPath: string;
 }
+
+export type Country = {
+    name: string;
+    flag: string;
+}
+
+export type UserLocPreference = {
+    country: Country;
+    currency: Currency;
+    language: Language;
+}
+
+export type UserLocPreferenceAPI = {
+    country_name: string;
+    country_flag: string;
+    currency: Currency;
+    language: Language;
+}

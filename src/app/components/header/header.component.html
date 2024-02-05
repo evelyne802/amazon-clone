@@ -7,7 +7,7 @@
             <img src="../../../assets/images/location-pin.png" class="location-icon">
             <p class="location-txt">
                 <label class="grey-txt">Deliver to</label><br>
-                <label class="bold-txt">{{ country }}</label>
+                <label class="bold-txt">{{ userLocDetails.country.name }}</label>
             </p>
         </div>
         <div class="search-div" id="search_bar">
@@ -20,8 +20,8 @@
             <button><img src="../../../assets/images/search-icon.png" class="search-icon"></button>
         </div>
         <div class="language-div hover">
-            <img [src]="selectedLanguage.iconPath" class="language-icon">
-            <label class="bold-txt language-code">{{ selectedLanguage.code }}</label>
+            <img [src]="userLocDetails.language.iconPath" class="language-icon">
+            <label class="bold-txt language-code">{{ userLocDetails.language.code }}</label>
         </div>
         <div class="account-div hover">
             <p class="account-txt">

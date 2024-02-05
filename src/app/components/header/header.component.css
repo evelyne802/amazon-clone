@@ -10,7 +10,7 @@
 .top-section {
     position: relative;
     background-color: #131921;
-    color: #fff;
+    color: #DDD;
     padding: 8px 0;
     margin-top: -8px;
     height: 45px;
@@ -96,6 +96,10 @@ label {
     line-height: 14px;
     font-weight: 400;
     margin-top: 4px;
+}
+
+label:hover {
+    cursor:pointer;
 }
 
 .bold-txt {

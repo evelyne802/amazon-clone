@@ -1,9 +1,245 @@
-<div class="footer">
+<body>
     <div (click)="scrollToTop($event)" class="back-to-top">Back to top</div>
     <div class="top-footer">
-        
+        <div class="section">
+            <label>Get to Know Us</label><br>
+            <p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Science</a>
+            </p>
+        </div>
+        <div class="section">
+            <label>Make Money with Us</label><br>
+            <p>
+                <a>Sell products on Amazon</a>
+                <a>Sell on Amazon Business</a>
+                <a>Sell apps on Amazon</a>
+                <a>Become an Affiliate</a>
+                <a>Advertise Your Products</a>
+                <a>Self-Pubish with Us</a>
+                <a>Host an Amazon Hub</a>
+                <a class="line-height"><b>›</b> See More Make Money with Us</a>
+            </p>
+        </div>
+        <div class="section">
+            <label>Amazon Payment Products</label><br>
+            <p>
+                <a>Amazon Business Card</a>
+                <a>Shop with Points</a>
+                <a>Reload Your Balance</a>
+                <a>Amazon Currency Converter</a>
+            </p>
+        </div>
+        <div class="section">
+            <label>Let Us Help You</label><br>
+            <p>
+                <a>Amazon and COVID-19</a>
+                <a>Your Account</a>
+                <a>Your Orders</a>
+                <a>Shipping Rates & Policies</a>
+                <a>Returns & Replacements</a>
+                <a>Manage Your Content and Devices</a>
+                <a>Amazon Assistant</a>
+                <a>Help</a>
+            </p>
+        </div>
+        <hr class="line">
+        <div class="language-currency-section">
+            <img src="../../../assets/images/logo.png" class="logo">
+            <button class="language-div">
+                <img routerLink="/" src="../../../assets/images/globe-icon.png" class="globe-icon">
+                <label class="btn-txt">{{ userLocDetails.language.name }}</label>
+            </button>
+            <button>
+                <label class="btn-txt">{{ userLocDetails.currency.symbol }}</label>
+                <label class="btn-txt">{{ userLocDetails.currency.code }} - {{ userLocDetails.currency.name }}</label>
+            </button>
+            <button>
+                <img class='country-flag' [src]="userLocDetails.country.flag">
+                <label class="btn-txt">{{ userLocDetails.country.name }}</label>
+            </button>
+        </div>
     </div> 
-    <!-- <div class="bottom-footer">
-        
-    </div>-->
-</div>
+
+    <div class="bottom-footer">
+        <table>
+            <tr>
+                <td>
+                    <a>
+                        <label>Amazon Music</label><br>
+                        Stream millions of songs
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Amazon Ads</label><br>
+                        Reach customers wherever they spend their time
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>6pm</label><br>
+                        Score deals on fashion brands
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>AbeBooks</label><br>
+                        Books, art & collectibles
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>ACX</label><br>
+                        Audiobooks Publishing Made Easy
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Sell on Amazon</label><br>
+                        Start a Selling Account
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Amazon Business</label><br>
+                        Everything For Your Business
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>
+                        <label>AmazonGlobal</label><br>
+                        Ship Orders Internationally
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Home Services</label><br>
+                        Experienced Pros Happiness Guarantee
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Amazon Web Services</label><br>
+                        Scalable CLoud Computing Services
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Audible</label><br>
+                        Listen to Books & Original Audio Performances
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Box Office Mojo</label><br>
+                        Find Movie Box Office Date
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Goodreads</label><br>
+                        Book reviews & recommendations
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>IMDB</label><br>
+                        Movies, TV & Celebrities
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a>
+                        <label>IMDBPro</label><br>
+                        Get Info Entertainment Profesionals Need
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Kindle Direct Publishing</label><br>
+                        Indie Digital & Print Publishing Made Easy
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Prime Video Direct</label><br>
+                        Video Distribution Made Easy
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Shopbop</label><br>
+                        Designer Fashion Brands
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Woot!</label><br>
+                        Deals and Shenanigans
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Zappos</label><br>
+                        Shoes & Clothing
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Ring</label><br>
+                        Smart Home Security Systems
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a>
+                        <label>eero Wifi</label><br>
+                        Stream 4K Video in Every Room
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Blink</label><br>
+                        Smart Security for Every Home
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Neighbors App</label><br>
+                        Real-Time Crime & Safety Alerts
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>Amazon Subscribtion Boxes</label><br>
+                        Top subscription boxes – right to your door
+                    </a>
+                </td>
+                <td>
+                    <a>
+                        <label>PillPack</label><br>
+                        Pharmacy Simplified
+                    </a>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="copyright-section">
+            <a class="link">Conditions of Use</a>
+            <a class="link">Privacy Notice</a>
+            <a class="link">Your Ads Privacy Choices</a>
+            <img class="footer-icon" src="../../../assets/images/footer-icon.png"><br>
+            <div class="link">© 1996-{{ currentYear }}, Amazon.com, Inc. or its affiliates</div>
+        </div>
+    </div>
+</body>

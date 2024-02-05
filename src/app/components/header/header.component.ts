@@ -1,8 +1,10 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { Currency, Language } from '../../../types';
+import { Component } from '@angular/core';
+import { UserLocPreference } from '../../../types';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MainService } from '../../../backend/main.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,26 +12,19 @@ import { CommonModule } from '@angular/common';
   imports: [
     HttpClientModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    RouterLink
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  
-  api_key = 'd0a3721616de4734bc63eb843e6eeae1';
-  url = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + this.api_key;
-  country = 'Israel';
-  currency : Currency = {name: '', code: '', symbol: ''};
-  selectedLanguage : Language = { name: 'English', code: 'EN', iconPath: '../../../assets/images/english-icon.png' };
-  languages : Language[] = [{ name: 'English', code: 'EN', iconPath: '../../../assets/images/english-icon.png' },
-                            { name: 'Español', code: 'ES', iconPath: '../../../assets/images/spanish-icon.png' },
-                            { name: 'الترجمة', code: 'AR', iconPath: '../../../assets/images/arabic-icon.png' },
-                            { name: 'Deutsch', code: 'ADE', iconPath: '../../../assets/images/deutsch-icon.png' },
-                            { name: 'עברית', code: 'HE', iconPath: '../../../assets/images/hebrew-icon.png' },
-                            { name: 'Português', code: 'PT', iconPath: '../../../assets/images/portuguese-icon.jpg' },
-                            { name: '한국어', code: 'KO', iconPath: '../../../assets/images/korean-icon.jpg' },
-                            { name: '中文 ', code: 'ZH', iconPath: '../../../assets/images/chinese-icon.jpg' },]
+  userLocDetails : UserLocPreference = {
+    country: {name: '', flag: ''},
+    currency: {name: '', code: '', symbol: ''},
+    language: { name: 'English', code: 'EN', iconPath: '../../../assets/images/english-icon.png' } 
+  };
+
   selectedCategory = '';
   categories = ["All Departments", 
               "Arts & Crafts", 
@@ -60,30 +55,36 @@ export class HeaderComponent {
               "Video Games",
               "Women's Fashion"];
     productCount : number = 0;
-    @ViewChild("search_bar") searchBar: ElementRef | undefined;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient, 
+              private mainService: MainService) { }
 
-  // this.getGeolocationData();
-
-  ngOnInit() {
+  ngOnInit(){
+    this.getUserLoc();  
+    
     $(document).ready(function() {
       $("#width_tmp_option").html($('#resizing_select option:selected').text());
       $('#resizing_select').width($("#width_tmp_select").width()!);
 
       $('#resizing_select').change(function(){
         $("#width_tmp_option").html($('#resizing_select option:selected').text());
-        $(this).width($("#width_tmp_select").width()!+60);
+        $(this).width(($("#width_tmp_select").width()!/2) + $("#width_tmp_select").width()! + 15);
       });
     });
   }
 
 
-  getGeolocationData()
-  {
-    this.http.get(this.url).subscribe((res:any)=>{
-      this.country = res.country_name;
-      this.currency= res.currency;
+  getUserLoc(){
+    this.mainService.getData()
+    .subscribe(data => {
+      console.log(data);
+      this.userLocDetails = {
+        country: { name: data.country_name, 
+                   flag: data.country_flag },
+        currency: data.currency,
+        language: this.userLocDetails.language,
+      } 
+      console.log(this.userLocDetails);
     });
   }
 
