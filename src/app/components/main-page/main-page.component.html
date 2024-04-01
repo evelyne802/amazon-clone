@@ -1,11 +1,343 @@
-<div class="page-content">
-    <div class="content-wrap">
+<div class="content-wrap">
     <app-header></app-header>
-        <div class="temp-header animate__animated animate__slideInDown">
-            <label class="temp-header-txt">We are experiencing shipping delays in your area. Please expect extended delivery time.</label>
-        </div>
-        <img src="'../../../../../assets/images/kitchen.jpg" class="carousel">
+    <div class="temp-header animate__animated animate__slideInDown">
+        <label class="temp-header-txt">We are experiencing shipping delays in your area. Please expect extended delivery time.</label>
     </div>
-    <app-footer></app-footer>
+
+    <div class="carousel">
+        <button type="button" class="carousel_btn jsPrev" aria-label="Previous slide">
+            <div class="arrow">
+                <div class="arrow-top"></div>
+                <div class="arrow-bottom"></div>
+            </div>
+        </button>
+    
+        <div class="carousel_track-container">
+            <ul class="carousel_track">
+                <li class="carousel_slide is-selected">
+                    <div class="carousel_image">
+                    <img src="../../../../../assets/images/categories/kitchen.jpg" alt="" role="presentation">
+                    </div>
+                </li>
+                <li class="carousel_slide">
+                    <div class="carousel_image">
+                    <img src="../../../../../assets/images/categories/books.jpg" alt="" role="presentation">
+                    </div>
+                </li>
+                <li class="carousel_slide">
+                    <div class="carousel_image">
+                    <img src="../../../../../assets/images/categories/gaming.jpg" alt="" role="presentation">
+                    </div>
+                </li>
+                <li class="carousel_slide">
+                    <div class="carousel_image">
+                    <img src="../../../../../assets/images/categories/toys.jpg" alt="" role="presentation">
+                    </div>
+                </li>
+                <li class="carousel_slide">
+                    <div class="carousel_image">
+                        <img src="../../../../../assets/images/categories/beauty.jpg" alt="" role="presentation">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    
+        <button type="button" class="carousel_btn jsNext" aria-label="Next slide">
+            <div class="arrow">
+                <div class="arrow-top"></div>
+                <div class="arrow-bottom"></div>
+            </div>
+        </button>
+
+        <div class="product-deals-section">
+            <div class="product-deals-div">
+                <h2>Gaming accessories</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/headset.jpg">
+                            <label>Headsets</label>
+                        </td>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/keyboard.jpg">
+                            <label>Keyboards</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/mouse.jpg">
+                            <label>Computer mice</label>
+                        </td>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/chair.jpg">
+                            <label>Chairs</label>
+                        </td>
+                    </tr>
+                </table>
+                <label class="link">See more</label>
+            </div>
+            <div class="product-deals-div">
+                <h2>Refresh your space</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/vase.jpg">
+                            <label>Dining</label>
+                        </td>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/home.jpg">
+                            <label>Home</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/kitchen-products.jpg">
+                            <label>Kitchen</label>
+                        </td>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/health-beauty.jpg">
+                            <label>Health and Beauty</label>
+                        </td>
+                    </tr>
+                </table>
+                <label class="link">See more</label>
+            </div>
+            <div class="product-deals-div">
+                <h2>Top Deal</h2>
+                <table>
+                    <img class="single-img" src="../../../assets/images/products/deals/jewelry.jpg">
+                </table>
+                <div class="deal-of-the-day">
+                    Up to %20 off
+                </div>
+                <label class="red">Deal</label><br>
+                <label>PAVOI Jewelry</label>
+                <label id="single_img_link" class="link">See all deals</label>
+            </div>
+            <div id="last_card" class="product-deals-div">
+                <h2>Shop deals in Fashion</h2>
+                <table>
+                    <tr>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/jeans.jpg">
+                            <label>Jeans under $50</label>
+                        </td>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/tops.jpg">
+                            <label>Tops under $25</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/dresses.jpg">
+                            <label>Dresses under $30</label>
+                        </td>
+                        <td>
+                            <img class="product-img" src="../../../assets/images/products/deals/shoes.jpg">
+                            <label>Shoes under $50</label>
+                        </td>
+                    </tr>
+                </table>
+                <label class="link">See all deals</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommended-products"> 
+
+       <!-- ............................  Home Improvement  ............................ -->
+
+       <div class="product-section">
+        <label class="product-rec-title">International top sellers in Home Improvement</label>
+            <div class="cover">
+                <button class="carousel-control left " (click)="leftScroll('homeImprovements')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="homeImprovements" class="scroll-images">
+                    <div class="child align-vertically" *ngFor="let product of homeImprovements">
+                        <img class="child-img" [src]="product.productPicture" alt="image" />
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right" (click)="rightScroll('homeImprovements')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- ............................  Electronics, gadgets & accessorie  ............................ -->
+
+        <div class="product-section">
+            <label class="product-rec-title">Deals on electronics, gadgets & accessories</label>
+            <label class="link">Explore all deals</label>
+            <div class="cover">
+                <button class="carousel-control left hidden-controls" (click)="leftScroll('electronics')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="electronics" class="scroll-images">
+                    <div class="child" *ngFor="let product of electronics">
+                       <div class="product-img-bg">
+                            <img class="child-img" [src]="product.productPicture" alt="image" />
+                       </div><br>
+                            <div class="product-details">
+                                <div class="deal-of-the-day">
+                                    {{ product.percentageOff }}% off
+                                </div>
+                                <label class="red">Deal</label><br>
+                                <label>
+                                    <label class="price-currency-sign">$</label>
+                                    <label class="price-txt">{{ product.price }}</label>
+                                    <label class="list-price-txt">List Price: <label class="line-through">${{ product.listPrice }}</label></label>
+                                </label><br>
+                                <p class="product-description">
+                                    {{ product.description }}
+                                </p>
+                            </div>
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right hidden-controls" (click)="rightScroll('electronics')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+        
+        <!-- ............................  Exciting deals  ............................ -->
+
+        <div class="product-section">
+            <label class="product-rec-title">Exciting deals</label>
+            <label class="link">See all details</label>
+            <div class="cover">
+                <button class="carousel-control left hidden-controls" (click)="leftScroll('excitingDeals')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="excitingDeals" class="scroll-images">
+                    <div class="child align-vertically" *ngFor="let product of excitingDeals">
+                        <div class="product-img-bg">
+                            <img class="child-img" [src]="product.productPicture" alt="image" />
+                       </div>
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right hidden-controls" (click)="rightScroll('excitingDeals')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- ............................  Home & Kitchen  ............................ -->
+
+        <div class="product-section">
+            <label class="product-rec-title">Best Sellers in Home & Kitchen</label>
+            <div class="cover">
+                <button class="carousel-control left hidden-controls" (click)="leftScroll('homeAndKitchen')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="homeAndKitchen" class="scroll-images">
+                    <div class="child align-vertically" *ngFor="let product of homeAndKitchen">
+                        <img class="child-img" [src]="product.productPicture" alt="image" />
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right hidden-controls" (click)="rightScroll('homeAndKitchen')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- ............................  Deals under $25  ............................ -->
+
+        <div class="product-section">
+            <label class="product-rec-title">Deals Under $25</label>
+            <label class="link">See more</label>
+            <div class="cover">
+                <button class="carousel-control left hidden-controls" (click)="leftScroll('dealsUnder25')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="dealsUnder25" class="scroll-images">
+                    <div class="child" *ngFor="let product of dealsUnder25">
+                       <div class="product-img-bg">
+                            <img class="child-img" [src]="product.productPicture" alt="image" />
+                       </div><br>
+                            <div class="product-details">
+                                <div class="deal-of-the-day">
+                                    {{ product.percentageOff }}% off
+                                </div>
+                                <label class="red">Deal</label><br>
+                                <label>
+                                    <label class="price-currency-sign">$</label>
+                                    <label class="price-txt">{{ product.price }}</label>
+                                    <label class="list-price-txt">List Price: <label class="line-through">${{ product.listPrice }}</label></label>
+                                </label><br>
+                                <p class="product-description">
+                                    {{ product.description }}
+                                </p>
+                            </div>
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right hidden-controls" (click)="rightScroll('dealsUnder25')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- ............................  Beauty & Personal Care  ............................ -->
+
+        <div class="product-section">
+            <label class="product-rec-title">Best Sellers in Beauty & Personal Care</label>
+            <div class="cover">
+                <button class="carousel-control left hidden-controls" (click)="leftScroll('beauty')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="beauty" class="scroll-images">
+                    <div class="child align-vertically" *ngFor="let product of beauty">
+                        <img class="child-img" [src]="product.productPicture" alt="image" />
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right hidden-controls" (click)="rightScroll('beauty')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- ............................  Baby gifts   ............................ -->
+
+        <div class="product-section">
+            <label class="product-rec-title">Popular Gifts in Baby</label>
+            <label class="link">Shop now</label>
+            <div class="cover">
+                <button class="carousel-control left hidden-controls" (click)="leftScroll('babyGifts')">
+                    <div class="left-arrow-icon"></div>
+                </button>
+
+                <div id="babyGifts" class="scroll-images">
+                    <div class="child align-vertically" *ngFor="let product of babyGifts">
+                        <img class="child-img" [src]="product.productPicture" alt="image" />
+                    </div>
+                    <div class="scroll-bar"></div>
+                </div>
+
+                <button class="carousel-control right hidden-controls" (click)="rightScroll('babyGifts')">
+                    <div class="right-arrow-icon"></div>
+                </button>
+            </div>
+        </div>
+
+    </div>
 </div>
+<app-footer></app-footer>
 

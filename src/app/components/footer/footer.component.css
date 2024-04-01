@@ -20,7 +20,7 @@ html, body {
 .top-footer {
     width: 100%;
     background-color: #232f3e;
-    height: var( --top-footer-height);
+    min-height: var( --top-footer-height);
     padding: 16px 20px;
     text-align: center;
     box-sizing: border-box;
@@ -28,7 +28,7 @@ html, body {
 
 .bottom-footer {
     background-color: #131a22;
-    height: 34em;
+    min-height: 34em;
     padding: 10px 0;
     text-align: center;
     box-sizing: border-box;

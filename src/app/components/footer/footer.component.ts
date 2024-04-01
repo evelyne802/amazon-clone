@@ -38,7 +38,6 @@ export class FooterComponent {
  getUserLoc(){
   this.mainService.getData()
   .subscribe(data => {
-    console.log(data);
     this.userLocDetails = {
       country: { name: data.country_name, 
                  flag: data.country_flag },

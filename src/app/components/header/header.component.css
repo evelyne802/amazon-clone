@@ -447,6 +447,7 @@ button:focus{
     }
 }
 
+
 @media screen and (max-width: 1280px) {
     .search-div {
         max-width: 52vw;

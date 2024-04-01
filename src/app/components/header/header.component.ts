@@ -56,8 +56,7 @@ export class HeaderComponent {
               "Women's Fashion"];
     productCount : number = 0;
 
-  constructor(private http: HttpClient, 
-              private mainService: MainService) { }
+  constructor( private mainService: MainService ) { }
 
   ngOnInit(){
     this.getUserLoc();  
@@ -77,14 +76,12 @@ export class HeaderComponent {
   getUserLoc(){
     this.mainService.getData()
     .subscribe(data => {
-      console.log(data);
       this.userLocDetails = {
         country: { name: data.country_name, 
                    flag: data.country_flag },
         currency: data.currency,
         language: this.userLocDetails.language,
       } 
-      console.log(this.userLocDetails);
     });
   }
 

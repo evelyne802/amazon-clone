@@ -27,3 +27,11 @@ export type UserLocPreferenceAPI = {
     currency: Currency;
     language: Language;
 }
+
+export type Product = {
+    productPicture: string;
+    percentageOff: number;
+    price: number;
+    listPrice: number;
+    description: string;
+}
