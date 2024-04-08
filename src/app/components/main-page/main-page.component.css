@@ -574,7 +574,7 @@
   }
 
   .recommendations {
-    padding: 5vh 0;
+    padding-top: 5vh;
   }
 
   hr {
@@ -722,6 +722,50 @@
     font-family: Amazon Ember;
   }
 
+
+.sign-in-div {
+  display: grid;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.sign-in-div a {
+  color:#007185;
+}
+
+.sign-in-div a:hover {
+  color:#C7511F;
+  cursor: pointer;
+}
+
+.sign-in-div label {
+  position: relative;
+  min-width: fit-content;
+  font-size: 13px;
+  margin: auto;
+}
+
+.sign-in-div button {
+  cursor: pointer;
+    background-position: right -170px;
+    display: block;
+    height: 28px;
+    width: 250px;
+    position: relative;
+    color: #000;
+    font-size: 12px;
+    line-height: 26px;
+    text-align: center;
+    text-shadow: 0 1px 0 #ffe093;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: solid 1px #f59320;
+    letter-spacing: 0.2px;
+    font-weight: bold;
+    /* background-color: #ffc531; */
+    background: linear-gradient(0deg, #ffc531, #ffd774 80%) no-repeat;
+}
 
 @media screen and (max-width: 1230px) {
     .product-deals-div {
