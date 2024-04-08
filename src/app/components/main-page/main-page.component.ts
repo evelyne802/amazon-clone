@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import 'animate.css';
-import { Product } from '../../../types';
+import { Product, ReccomendedByHistoryProduct } from '../../../types';
 import { ProductsService } from '../../../backend/products.service';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-main-page',
@@ -12,7 +12,8 @@ import { NgFor } from '@angular/common';
   imports: [
     HeaderComponent,
     FooterComponent,
-    NgFor
+    NgFor,
+    NgIf
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
@@ -28,10 +29,24 @@ export class MainPageComponent {
   babyGifts: Product[] = this.productService.getBabyGifts();
   electronics: Product[] = this.productService.getElectronics();
 
+  recByHistory: ReccomendedByHistoryProduct[] = this.productService.getReccomendedByHistory();
+  productsPerPage: number = 7;
+  pagesNum: number = Math.ceil(this.recByHistory.length/this.productsPerPage);
+  page: number = 1;
+  recByHistoryDisplay: ReccomendedByHistoryProduct[] = [];
+
+  windowWidth = window.innerWidth;
+
   constructor( private productService: ProductsService ) { }
 
   ngOnInit(){
     this.mainCarousel();
+
+    this.productsPerPage = this.updateProductsPerPage();
+    this.pagesNum = Math.ceil(this.recByHistory.length/this.productsPerPage);
+
+    this.recByHistoryDisplay = this.getProductsToDisplay();
+    window.addEventListener("resize", this.updateProductsPerPage);
   }
 
   mainCarousel(){
@@ -45,7 +60,6 @@ export class MainPageComponent {
     // Handling arrow buttons
     const handleArrowClick = (arrow: any) => {
       arrow.addEventListener('click', () => {
-        console.log('clicked!');
         slides = [...slider.children]
         const currSlide = slider.querySelector('.is-selected')
         currSlide.classList.remove('is-selected')
@@ -77,19 +91,59 @@ export class MainPageComponent {
     slideInterval()
   }
 
+
   rightScroll(elementId: string) {
     const right = document.querySelector(`#${elementId}`);
-
     right!.scrollBy(700, 0);
-    console.log(right?.scroll());
-
   }
+
 
   leftScroll(elementId: string) {
     const left = document.querySelector(`#${elementId}`);
     left!.scrollBy(-700, 0);
-
   }
 
-}
 
+  historyRecRightScroll(){
+    if(this.page == this.pagesNum){
+      this.page = 1;
+    }
+    else {
+      this.page += 1;
+    }
+    this.recByHistoryDisplay = this.getProductsToDisplay();
+  }
+
+
+  historyRecLeftScroll(){
+    if(this.page == 1){
+      this.page = this.pagesNum;
+    }
+    else {
+      this.page -= 1;
+    }
+    this.recByHistoryDisplay = this.getProductsToDisplay();
+  }
+
+
+  getProductsToDisplay(){
+    let end = this.page*this.productsPerPage;
+    let start = end-this.productsPerPage;
+
+    console.log(this.productsPerPage)
+    let productsToDisplay = this.recByHistory.slice(start, end);
+    console.log(productsToDisplay);
+    return productsToDisplay;
+  }
+
+  updateProductsPerPage() {
+    this.windowWidth = window.innerWidth;
+    let productsPerPage = Math.floor((this.windowWidth-120)/185);
+    return productsPerPage;
+  }
+
+  resetPageCount(){
+    this.page = 1;
+    this.recByHistoryDisplay = this.getProductsToDisplay();
+  }
+}

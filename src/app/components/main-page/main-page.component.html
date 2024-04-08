@@ -336,7 +336,53 @@
                 </button>
             </div>
         </div>
+    </div>
 
+    <div class="browser-history-recommendations">  
+        <div class="recommendations">
+            <hr size="4">
+                <label class="product-rec-title">Customers who viewed items in your browsing history also viewed</label>
+                <label class="pages"><label>Page {{ page }} of {{ pagesNum }}</label> <span class="text-seperator">|</span> <a (click)="resetPageCount()">start over</a></label>
+                <div class="history-products">
+                    <button class="history-carousel-control history-left" (click)="historyRecLeftScroll()">
+                        <div class="history-left-arrow"></div>
+                    </button>
+
+                    <div class="scroll-history-recs">
+                        <div class="child" *ngFor="let product of recByHistoryDisplay">
+                            <img class="history-child-img" [src]="product.productPicture" alt="image" /><br>
+                            <p class="history-rec-description">{{ product.description }}</p>
+                            <div class="rating">
+                                <img class='rating-img' [src]="product.ratingImg">
+                                <label class="history-rec-description rating-txt">{{ product.ratingsNum }}</label>
+                            </div>
+                            <div *ngIf="product.amazonsChoice" class="amazons-choice-stamp">
+                                <img  src="../../../assets/images/icons/amazons-choice.png">
+                                <label>in {{ product.category }}</label>
+                            </div>
+                            <div>
+                                <label class="price-currency-sign">$</label>
+                                <label class="price-txt">{{ product.price }}</label>
+                            </div>
+                            <p class="small-font">
+                                get it as soon as <b>{{ product.deliveryDate }}</b>
+                            </p>
+                            <div class="small-font">
+                                <label *ngIf="product.shippingCost > 0">$ {{ product.shippingCost }} Shipping</label>
+                                <label *ngIf="product.shippingCost == 0">FREE Shipping by Amazon</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="history-carousel-control right" (click)="historyRecRightScroll()">
+                        <div class="history-right-arrow"></div>
+                    </button>
+                </div><br><br>
+            <hr size="4">
+        </div>
+        <div class="sign-in-div">
+
+        </div>
     </div>
 </div>
 <app-footer></app-footer>

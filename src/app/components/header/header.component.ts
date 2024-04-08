@@ -22,7 +22,7 @@ export class HeaderComponent {
   userLocDetails : UserLocPreference = {
     country: {name: '', flag: ''},
     currency: {name: '', code: '', symbol: ''},
-    language: { name: 'English', code: 'EN', iconPath: '../../../assets/images/english-icon.png' } 
+    language: { name: 'English', code: 'EN', iconPath: '../../../assets/images/languages/english-icon.png' } 
   };
 
   selectedCategory = '';

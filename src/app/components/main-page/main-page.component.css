@@ -25,7 +25,7 @@
 }
   
 .content-wrap {
-    padding-bottom: var( --top-footer-height);   /* Footer height */
+    /*padding-bottom: var( --top-footer-height);    Footer height */
     background-color: #e3e6e6;
     z-index: 2;
     position: relative;
@@ -94,6 +94,8 @@
     object-fit: cover;
     object-position: center;
     border: none;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   }
   
   .carousel_title {
@@ -322,7 +324,7 @@
     background-color: white;
     text-align: left;
     padding-top: 20px;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
 }
 
 .product-section:hover .carousel-control{  
@@ -450,6 +452,15 @@
     cursor: pointer;
   }
 
+  .history-child-img {
+    max-width: 270px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 6px;
+    cursor: pointer;
+  }
+
   .product-img-bg {
     background-color: #f7f8f8;
     min-width: 215px;
@@ -555,6 +566,162 @@
   .right:hover .right-arrow-icon {
     background: url('../../../assets/images/icons/right-arrow-hover.png');
   }
+
+  .browser-history-recommendations {
+    width: 100%;
+    background-color: white;
+    height: 100vh;
+  }
+
+  .recommendations {
+    padding: 5vh 0;
+  }
+
+  hr {
+    border: none;
+    height: 0.5px;
+    color: #4f4f4f; 
+    background-color: #d3d3d3;
+  }
+
+  .history-products {
+    padding: 0px 73px;
+    position: relative;
+  }
+
+  .history-carousel-control {
+    position: absolute;
+    top: 190px;
+    background-color: #fff;
+    height: 40px;
+    line-height: 100px;
+    width: 40px;
+    text-align: center;
+    box-shadow: 1px 1px 3px #888;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    border: solid 0.3px #e0e0e0;
+    cursor: pointer;
+    border-radius: 7px;
+  }
+
+  .history-carousel-control:hover {
+    background-color: #efefefaf;
+  }
+
+  .history-left {
+    left: 20px;
+    padding-right: 5px 
+  }
+
+  .pages {
+    right: 50px;
+    position: absolute;
+    font-size: 14px;
+  }
+
+  .pages a {
+    position: relative;
+    font-size: 14px;
+    color: #007185;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  .pages label {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .text-seperator {
+    display: inline-block;
+    margin: -2px 0.67375em 0;
+    width: 1px;
+    background-color: #ddd;
+    line-height: 0;
+    height: 14px;
+    vertical-align: middle;
+    border: none;
+    color: white;
+  }
+
+  .pages a:hover {
+    color: #C7511F;
+  }
+
+  .scroll-history-recs {
+    width: 100%;
+    min-height: 250px;
+    height: auto;
+    display: flex;                                                                   
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+  .history-right-arrow {
+    background: url('../../../assets/images/icons/history-right-arrow.png');
+    margin: auto;
+    height: 20px;
+    width: 19px;
+  }
+
+  .history-left-arrow {
+    background: url('../../../assets/images/icons/history-left-arrow.png');
+    margin: auto;
+    height: 20px;
+    width: 19px;
+  }
+
+  .history-rec-description {
+    color: #007185;
+    font-size: 14px;
+    font-family: Amazon Ember;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+    max-width: 155px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    margin: 8px 0;
+  }
+
+  .history-rec-description:hover {
+    color: #C7511F;
+    cursor: pointer;
+  }
+
+  .rating-img {
+    height: 15px;
+  }
+
+  .rating {
+    display: inline-flex;
+  }
+
+  .rating-txt {
+    margin: 0 10px;
+    font-size: 12px;
+  }
+
+  .amazons-choice-stamp {
+    color: #0F1111;
+    font-size: 12px;
+  }
+
+  .amazons-choice-stamp img {
+    height: 22px;
+  }
+
+  .small-font {
+    max-width: 150px;
+    font-size: 12px !important;
+    margin: 3px 0;
+    font-family: Amazon Ember;
+  }
+
 
 @media screen and (max-width: 1230px) {
     .product-deals-div {

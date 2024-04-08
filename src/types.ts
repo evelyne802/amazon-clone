@@ -35,3 +35,17 @@ export type Product = {
     listPrice: number;
     description: string;
 }
+
+export type ReccomendedByHistoryProduct = {
+    productPicture: string;
+    description: string;
+    price: number;
+    rating: number;
+    ratingImg: string;
+    ratingsNum: any;
+    amazonsChoice: Boolean;
+    category: string;
+    numShippingDays: number;
+    shippingCost: number;
+    deliveryDate: string;
+}

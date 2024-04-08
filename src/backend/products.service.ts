@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../types';
+import { Product, ReccomendedByHistoryProduct } from '../types';
 
 @Injectable({
   providedIn: 'root'
@@ -237,7 +237,75 @@ export class ProductsService {
       listPrice: 379.99, percentageOff: 21, price: 299.99},
   ]
 
-  constructor() { }
+
+  reccomendedByHistory: ReccomendedByHistoryProduct[] = [
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81drOrfKBBL._AC_UL160_SR160,160_.jpg',
+      description: 'Wahl Lithium Ion Pro Rechargeable Cord/Cordless Hair Clippers for Men, Woman, & Children with Smart Charge Technology', 
+      category: 'Hair Clippers', price: 35.40, amazonsChoice: true, numShippingDays: 15, rating: 4.5, ratingsNum: 1987, shippingCost: 27.15,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81c3p8tycUL._AC_UL160_SR160,160_.jpg',
+      description: 'Wahl USA Clipper Lithium-Ion Cordless Haircutting Kit - Rechargeable Grooming and Trimming Kit', 
+      category: 'Hair', price: 59.99, amazonsChoice: false, numShippingDays: 15, rating: 4.5, ratingsNum: 4932, shippingCost: 27.71,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/816A7pT9B3L._AC_UL160_SR160,160_.jpg',
+      description: 'WAHL Clipper 2-in-1 Hair Clipper and Shaver Lithium-Ion Rechargeable Cord Cordless Hair Clipper and Shaver Combo Kit', 
+      category: 'Hair', price: 64.20, amazonsChoice: false, numShippingDays: 15, rating: 4, ratingsNum: 108, shippingCost: 27.18,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81gMm6JooHL._AC_UL160_SR160,160_.jpg',
+      description: 'Wahl USA Rechargeable Lithium Ion All in One Beard Trimmer for Men with Detail and Ear & Nose Hair Trimmer Attachment', 
+      category: 'Hair Finishing Trimmers', price: 44.99 ,amazonsChoice: true, numShippingDays: 15, rating: 4.5, ratingsNum: 10096, shippingCost: 26.51,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/815olt4G15L._AC_UL160_SR160,160_.jpg',
+      description: 'Novah® Professional Hair Clippers for Men, Professional Barber Clippers and Trimmer Set, Mens Cordless Hair Clippers for Barbers Haircut Kit Fade',
+      category: 'Hair', price: 99.95, amazonsChoice: false, numShippingDays: 15, rating: 4.5, ratingsNum: 7379, shippingCost: 27.90,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/61vuqkBvzEL._AC_UL160_SR160,160_.jpg',
+      description: 'Poetic TurtleSkin Series for Google Pixel Tablet Case 11 inch (2023), Heavy Duty Shockproof Rugged Kids Friendly Drop Protection Silicone Cover Case, Black',
+      category: '', price: 20.95, amazonsChoice: false, numShippingDays: 29, rating: 4.5, ratingsNum: 119, shippingCost: 12.27,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/71qgyTsbUrL._AC_UL160_SR160,160_.jpg',
+      description: 'CoBak Case for All New Google Pixel Tablet 2023, Compatible with Charging Speaker Dock, Smart Cover Compatible with Google Pixel Tablet, Black',
+      category: '', price: 8.99, amazonsChoice: false, numShippingDays: 30, rating: 4.5, ratingsNum: 41, shippingCost: 11.25,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/611CARzGsXL._AC_UL160_SR160,160_.jpg',
+      description: 'Penoval Google Pixel Tablet Case 11 inch (2023), Silicone Cover Case, Adjustable Viewing Angle, Easy Carry-on, Protective Cover Compatible with Charging Speaker Dock', 
+      category: '', price: 18.99, amazonsChoice: false, numShippingDays: 30, rating: 4, ratingsNum: 28, shippingCost: 49,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81jEjrWqVHL._AC_UL160_SR160,160_.jpg',
+      description: 'Fintie Case for Google Pixel Tablet 11 Inch 2023 Release, Multi-Angle Viewing Protective Stand Cover with Pocket & Pencil Holder Compatible with Charging Speaker Dock, Gray',
+      category: 'Tablet Cases', price: 21.99, amazonsChoice: true, numShippingDays: 30, rating: 4.5, ratingsNum: 55, shippingCost: 11.43, 
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/71h3PFdsA2L._AC_UL160_SR160,160_.jpg',
+      description: 'Penoval USI2.0 Stylus Pen for Some Chromebook Model, 4096 Levels Pressure for Lenovo chromebook Duet, ASUS chromebook C436, HP chromebook X360 12b, HP chromebook X360 14b Google Pixel Tablet, USI2.0',
+      category: '', price: 59.90, amazonsChoice: false, rating: 4.5, ratingsNum: 460, numShippingDays: 14, shippingCost: 22.22,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81ZbzppiLxL._AC_UL160_SR160,160_.jpg',
+      description: 'Wahl Clipper Compact Multi-Purpose Haircut, Beard, & Body Grooming Hair Clipper & Trimmer with Extreme Power & Easy Clean Blades - Model 79607',
+      category: '', price: 49.32, amazonsChoice: false, rating: 4.5, ratingsNum: 2091, numShippingDays: 30, shippingCost: 0,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/71oeKu4k8tL._AC_UL160_SR160,160_.jpg',
+      description: 'IMBZBK 3 Pack Screen Protector for Google Pixel Tablet 2023 Tempered Glass Protective Film, Ultra HD, Anti-Scratch, Case Friendly, Screen Cover for Pixel Tablet, Suitable with Face ID & Pencil',
+      category: '', price: 9.99, rating: 4.5, ratingsNum: 663, amazonsChoice: false, shippingCost: 10.96, numShippingDays: 30,
+      ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81WGBjzcTwL._AC_UL160_SR160,160_.jpg',
+      description: 'ENET-CASE for Google Pixel Tablet Case 2023- Slim Folding Stand Folio Cover for Pixel Tablet, 11inch with Card Pocket, Brown',
+      category: '', price: 19.99, amazonsChoice: false, rating: 4, ratingsNum: 19, shippingCost: 11.29, numShippingDays: 21,
+      ratingImg: '', deliveryDate: ''},
+    // { productPicture: '',
+    //   description: '',
+    //   category: '',
+    //   ratingImg: ''},
+    // { productPicture: '',
+    //   description: '',
+    //   category: '',
+    //   ratingImg: ''},
+  ]
+
+  constructor() { 
+    this.reccomendedByHistory.forEach((obj) => obj.ratingImg = this.getRatingImage(obj.rating));
+    this.reccomendedByHistory.forEach((obj) => obj.ratingsNum = this.addCommas(obj.ratingsNum));
+    this.reccomendedByHistory.forEach((obj) => obj.deliveryDate = this.getEstimatedDeliveryDate(obj.numShippingDays));
+  }
 
   getHomeImprovementProducts(){
     return this.homeImprovement;
@@ -265,5 +333,36 @@ export class ProductsService {
 
   getElectronics(){
     return this.electronics;
+  }
+
+  getReccomendedByHistory(){
+    return this.reccomendedByHistory;
+  }
+
+  getRatingImage(rating: number){
+    if(rating == 1){ return '../assets/images/ratings/one-star.png' }
+    if(rating > 1 && rating < 2){ return '../assets/images/ratings/one-half-stars.png' }
+    if(rating == 2){ return '../assets/images/ratings/two-stars.png' }
+    if(rating > 2 && rating < 3){ return '../assets/images/ratings/two-half-stars.png' }
+    if(rating == 3){ return '../assets/images/ratings/three-stars.png' }
+    if(rating > 3 && rating < 4){ return '../assets/images/ratings/three-half-stars.png' }
+    if(rating == 4){ return '../assets/images/ratings/four-stars.png' }
+    if(rating > 4 && rating < 5){ return '../assets/images/ratings/four-half-stars.png' }
+    else{ return '../assets/images/ratings/five-stars.png' }
+  }
+
+
+  addCommas(ratingsNum: number){
+    return ratingsNum.toLocaleString();
+  }
+
+
+  getEstimatedDeliveryDate(numDays: number) {
+    let delivery = new Date();
+    let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    delivery.setDate(delivery.getDate() + numDays);
+    console.log(delivery);
+    return `${weekdays[delivery.getDay()]}, ${delivery.toLocaleString('default', { month: 'long' })} ${delivery.getDate()}`;
   }
 }
