@@ -1,1 +1,12 @@
-<p>location-popup works!</p>
+<div class="bubble">
+    <p>
+        We're showing you items that ship to <b>{{ userLocDetails.country.name }}</b>. 
+        To see items that ship to a different country, change your delivery address.
+    </p>
+    <div class="buttons">
+        <button class="dismiss" (click)="closePopUp()" mat-dialog-close>Dismiss</button>
+        <button class="changeAddress yellow-button">Change Address</button>
+    </div>
+</div>
+
+

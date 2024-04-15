@@ -1,10 +1,14 @@
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UserLocPreference } from '../../../types';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MainService } from '../../../backend/main.service';
 import { RouterLink } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogRef } from '@angular/cdk/dialog';
+import { LocationPopupComponent } from '../location-popup/location-popup.component';
+import { SignInPopupComponent } from '../sign-in-popup/sign-in-popup.component';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +17,7 @@ import { RouterLink } from '@angular/router';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
@@ -56,11 +60,17 @@ export class HeaderComponent {
               "Women's Fashion"];
     productCount : number = 0;
 
-  constructor( private mainService: MainService ) { }
+    signInDialog : any;
+
+  constructor( private mainService: MainService, 
+               public dialog: MatDialog,) { }
 
   ngOnInit(){
-    this.getUserLoc();  
-    
+    this.getUserLoc(); 
+
+    this.openSignInDialog(); 
+    this.openLocDialog();  
+
     $(document).ready(function() {
       $("#width_tmp_option").html($('#resizing_select option:selected').text());
       $('#resizing_select').width($("#width_tmp_select").width()!);
@@ -90,4 +100,29 @@ export class HeaderComponent {
     const searchBar = document.getElementById("search_input") as HTMLElement;
     window.setTimeout(() => searchBar.focus(), 0);
   }
+
+
+  openLocDialog() {
+    this.dialog.open(LocationPopupComponent, {
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms',
+      position: {left :'117px', top: '70px'}
+    });
+  }
+
+  openSignInDialog() {
+    const dialogRef = this.signInDialog = this.dialog.open(SignInPopupComponent, {
+      enterAnimationDuration: '500ms',
+      exitAnimationDuration: '500ms',
+      position: {right :'150px', top: '55px'},
+    });
+ 
+    dialogRef.afterOpened().subscribe(_ => {
+      setTimeout(() => {
+         dialogRef.close();
+      }, 8000)
+    })
+
+  }
+
 }

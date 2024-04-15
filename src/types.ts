@@ -49,3 +49,8 @@ export type ReccomendedByHistoryProduct = {
     shippingCost: number;
     deliveryDate: string;
 }
+
+export interface DialogData {
+    popUpType: 'location' | 'signIn' ;
+    userDetails: UserLocPreference;
+  }

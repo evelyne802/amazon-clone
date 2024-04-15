@@ -1,0 +1,63 @@
+.bubble {
+    position: relative;
+    background: #ffffff;
+    color: black;
+    font-family: Amazon Ember;
+    font-size: 14px;
+    width: 410px;
+    height: 97px;
+    border-radius: 4px;
+    padding: 0px 20px;
+}
+
+/* .bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-color: #ffffff transparent;
+    border-width: 0 14px 13px;
+    top: -13px;
+    left: 11%;
+    margin-left: -14px;
+} */
+
+button {
+    margin: 0px 5px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: Amazon Ember;
+    font-size: 13px;
+    color: #3d3d3d;
+    cursor: pointer;
+}
+
+.buttons {
+    right:20px;
+    position: absolute;
+}
+
+.dismiss {
+    box-shadow: 0 0 3px rgb(166, 166, 166);
+    border: none;
+    background-color: white;
+}
+
+.dismiss:hover {
+    background-color: rgba(234, 234, 234, 0.511);
+}
+
+.yellow-button {
+    background-color: #ffd814;
+    border: none;
+}
+ 
+.yellow-button:hover {
+    background-color: #ffca14;
+}
+
+::ng-deep .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0;
+}
