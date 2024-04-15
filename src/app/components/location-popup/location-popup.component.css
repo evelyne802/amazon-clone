@@ -10,19 +10,23 @@
     padding: 0px 20px;
 }
 
-/* .bubble:after {
-    content: '';
-    position: absolute;
-    display: block;
+.transparent {
+    position: relative;
+    width: 100%;
+    height: 15px;
+}
+
+.arrow {
     width: 0;
-    z-index: 1;
+    height: 0;
     border-style: solid;
-    border-color: #ffffff transparent;
-    border-width: 0 14px 13px;
-    top: -13px;
-    left: 11%;
-    margin-left: -14px;
-} */
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 17px solid #ffffff;
+    border-top: 0;
+    position: absolute;
+    left: 20px;
+}
 
 button {
     margin: 0px 5px;
@@ -61,3 +65,8 @@ button {
 ::ng-deep .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
     opacity: 0;
 }
+
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: rgba(145, 35, 35, 0);
+}
+ 

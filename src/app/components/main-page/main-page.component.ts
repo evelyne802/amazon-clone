@@ -130,9 +130,7 @@ export class MainPageComponent {
     let end = this.page*this.productsPerPage;
     let start = end-this.productsPerPage;
 
-    console.log(this.productsPerPage)
     let productsToDisplay = this.recByHistory.slice(start, end);
-    console.log(productsToDisplay);
     return productsToDisplay;
   }
 

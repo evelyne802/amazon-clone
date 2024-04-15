@@ -362,7 +362,6 @@ export class ProductsService {
     let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
     delivery.setDate(delivery.getDate() + numDays);
-    console.log(delivery);
     return `${weekdays[delivery.getDay()]}, ${delivery.toLocaleString('default', { month: 'long' })} ${delivery.getDate()}`;
   }
 }

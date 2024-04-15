@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { MainService } from '../../../backend/main.service';
 import { RouterLink } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogRef } from '@angular/cdk/dialog';
 import { LocationPopupComponent } from '../location-popup/location-popup.component';
 import { SignInPopupComponent } from '../sign-in-popup/sign-in-popup.component';
 
@@ -106,7 +105,7 @@ export class HeaderComponent {
     this.dialog.open(LocationPopupComponent, {
       enterAnimationDuration: '500ms',
       exitAnimationDuration: '500ms',
-      position: {left :'117px', top: '70px'}
+      position: {left :'117px', top: '50px'},
     });
   }
 
@@ -114,7 +113,7 @@ export class HeaderComponent {
     const dialogRef = this.signInDialog = this.dialog.open(SignInPopupComponent, {
       enterAnimationDuration: '500ms',
       exitAnimationDuration: '500ms',
-      position: {right :'150px', top: '55px'},
+      position: {right :'150px', top: '50px'},
     });
  
     dialogRef.afterOpened().subscribe(_ => {
