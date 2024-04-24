@@ -26,7 +26,7 @@ export class LocationPopupComponent {
   }
 
   getUserLoc(){
-    this.mainService.getData()
+    this.mainService.getGeoData()
     .subscribe(data => {
       this.userLocDetails = {
         country: { name: data.country_name, 

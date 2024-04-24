@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
   templateUrl: './sign-in-popup.component.html',
   styleUrl: './sign-in-popup.component.css'
 })
+
 export class SignInPopupComponent {
 
-  constructor(){}
+  constructor(){} 
 
 }
