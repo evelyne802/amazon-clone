@@ -291,14 +291,18 @@ export class ProductsService {
       description: 'ENET-CASE for Google Pixel Tablet Case 2023- Slim Folding Stand Folio Cover for Pixel Tablet, 11inch with Card Pocket, Brown',
       category: '', price: 19.99, amazonsChoice: false, rating: 4, ratingsNum: 19, shippingCost: 11.29, numShippingDays: 21,
       ratingImg: '', deliveryDate: ''},
+    { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/41XWWZewq7L._AC_UL160_SR160,160_.jpg',
+      description: 'Penoval USI 2.0 Lite Stylus Pen for Some Chromebook Model, 4096 Levels Pressure & Smooth Writing Compatible with Google Pixel Tablet, Amazon Fire Max 11, ASUS Flip CX5/CM3, Lenovo Duet and More',
+      category: '', price: 49.90, amazonsChoice: false, rating: 4, ratingsNum: 37, shippingCost: 0, numShippingDays: 29,
+      ratingImg: '', deliveryDate: ''},
     // { productPicture: '',
     //   description: '',
-    //   category: '',
-    //   ratingImg: ''},
+    //   category: '', price: , amazonsChoice: false, rating: , ratingsNum: , shippingCost: , numShippingDays: ,
+    //   ratingImg: '', deliveryDate: ''},
     // { productPicture: '',
     //   description: '',
-    //   category: '',
-    //   ratingImg: ''},
+    //   category: '', price: , amazonsChoice: false, rating: , ratingsNum: , shippingCost: , numShippingDays: ,
+    //   ratingImg: '', deliveryDate: ''},
   ]
 
   constructor() { 

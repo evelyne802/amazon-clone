@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { MainService } from '../../../backend/main.service';
-import { Currency, Language, UserLocPreference } from '../../../types';
+import { MainService } from '../../../../backend/main.service';
+import { Currency, Language, UserLocPreference } from '../../../../types';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-web-footer',
   standalone: true,
   imports: [
     RouterLink
   ],
-  templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  templateUrl: './web-footer.component.html',
+  styleUrl: './web-footer.component.css'
 })
-export class FooterComponent {
+export class WebFooterComponent {
 
   currentYear = new Date().getFullYear();
 

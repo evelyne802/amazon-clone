@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
+import { WebHeaderComponent } from '../web-header/web-header.component';
+import { WebFooterComponent } from '../web-footer/web-footer.component';
 import 'animate.css';
-import { Product, ReccomendedByHistoryProduct } from '../../../types';
-import { ProductsService } from '../../../backend/products.service';
+import { Product, ReccomendedByHistoryProduct } from '../../../../types';
+import { ProductsService } from '../../../../backend/products.service';
 import { NgFor, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-main-page',
+  selector: 'app-web-main-page',
   standalone: true,
   imports: [
-    HeaderComponent,
-    FooterComponent,
+    WebHeaderComponent,
+    WebFooterComponent,
     NgFor,
     NgIf
   ],
-  templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+  templateUrl: './web-main-page.component.html',
+  styleUrl: './web-main-page.component.css'
 })
 
-export class MainPageComponent {
+export class WebMainPageComponent {
 
   homeImprovements: Product[] = this.productService.getHomeImprovementProducts();
   excitingDeals: Product[] = this.productService.getExcitingDeals();

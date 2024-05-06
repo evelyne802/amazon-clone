@@ -1,0 +1,47 @@
+<div class="top-section">
+    <img src="../../../assets/images/icons/menu-icon.png" class="menu-icon">
+    <div class="logo-div" routerLink="/">
+        <img src="../../../assets/images/icons/logo.png" class="logo">
+    </div> 
+    <div class="empty-space"></div>
+    <div class="sign-in-div">
+        <label class="sign-in-txt">Sign in ›</label>
+        <img src="../../../assets/images/icons/user-icon.png" class="user-icon">
+    </div>
+    <div class="cart-div">
+        <label class="product-txt bold-txt">{{ productCount }}</label><br>
+        <img src="../../../assets/images/icons/cart.png" class="cart-icon">
+    </div>
+</div>
+<div class="search-section">
+    <div class="search-div" id="search_bar">
+        <select style="display:none;visibility:hidden;" id="width_tmp_select"><option id="width_tmp_option"></option></select>
+        <input id="search_input" type="text" placeholder="Search Amazon">
+        <button><img src="../../../assets/images/icons/search-icon.png" class="search-icon"></button>
+    </div>
+</div>
+<div class="bottom-section">
+    <div class="bottom-header-div">
+        <label class="bottom-header-txt">Deals</label>
+    </div>
+    <div class="bottom-header-div">
+        <label class="bottom-header-txt">Amazon Basics</label>
+    </div>
+    <div class="bottom-header-div">
+        <label class="bottom-header-txt">Best Sellers</label>
+    </div>
+    <div class="bottom-header-div">
+        <label class="bottom-header-txt">LiveStreams</label>
+    </div>
+</div>
+<div class="delivery-section">
+    <img src="../../../assets/images/icons/location-pin.png" class="location-icon">
+    <label class="delivery-txt">Deliver to {{ userLocDetails.country.name }}</label>
+    <div class="arrow down"></div>
+</div>
+<!-- <div class="delivery-loc-popup animate__animated animate__slideInDown">
+        
+</div> -->
+<div class="temp-header animate__animated animate__slideInDown">
+    <label class="temp-header-txt">We are experiencing shipping delays in your area. Please expect extended delivery time.</label>
+</div>

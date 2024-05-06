@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
-import { MainService } from '../../../backend/main.service';
-import { UserLocPreference } from '../../../types';
+import { MainService } from '../../../../backend/main.service';
+import { UserLocPreference } from '../../../../types';
 import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({

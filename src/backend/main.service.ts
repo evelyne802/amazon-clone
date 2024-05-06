@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Currency, Language, UserLocPreferenceAPI } from '../types';
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue } from "firebase/database";
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,10 +10,9 @@ import { getDatabase, ref, onValue } from "firebase/database";
 
 export class MainService {
 
-  // api_key = 'd0a3721616de4734bc63eb843e6eeae1';
-
-  api_key = '';
-  url = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + this.api_key;
+  apiKey = 'd0a3721616de4734bc63eb843e6eeae1';
+  apiUrl = 'http://localhost:3000/api/data';
+  url = 'https://api.ipgeolocation.io/ipgeo?apiKey=' + this.apiKey;;
   country = '';
   currency : Currency = {name: '', code: '', symbol: ''};
   currentLanguage: Language = { name: 'English', code: 'EN', iconPath: '../../../assets/images/languages/english-icon.png' };
@@ -27,42 +26,64 @@ export class MainService {
                             { name: '한국어', code: 'KO', iconPath: '../../../assets/languages/images/korean-icon.jpg' },
                             { name: '中文 ', code: 'ZH', iconPath: '../../../assets/languages/images/chinese-icon.jpg' },];
 
-  constructor( private http: HttpClient) {
-    this.getApiKey();
+  categories = ["All Departments", 
+                            "Arts & Crafts", 
+                            "Automotive", 
+                            "Baby", 
+                            "Beauty & Persoal Care",
+                            "Books",
+                            "Boy's Fashion",
+                            "Computers",
+                            "Deals",
+                            "Digital Music",
+                            "Electronics",
+                            "Girl's Fashion",
+                            "Health & Household",
+                            "Home & Kitchen",
+                            "Industrial & Scientific",
+                            "Kindle Store",
+                            "Luggage",
+                            "Men's Fashion",
+                            "Movies & TV",
+                            "Music, Cds & Vinyl",
+                            "Pet Supplies",
+                            "Prime Video",
+                            "Sofrware",
+                            "Sports & Outdoors",
+                            "Tools & Home Improvement",
+                            "Toys & Games",
+                            "Video Games",
+                            "Women's Fashion"];
+  productCount : number = 0;
+
+  constructor( private http: HttpClient ) { }
+
+  getData(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-
-  getApiKey() {
-    const firebaseConfig = {
-      apiKey: "AIzaSyDhwxnX29e2ceGu-_gDzPU3sNy91Db35lQ",
-      authDomain: "fir-94da5.firebaseapp.com",
-      databaseURL: "https://fir-94da5-default-rtdb.firebaseio.com",
-      projectId: "fir-94da5",
-      storageBucket: "fir-94da5.appspot.com",
-      messagingSenderId: "558154350070",
-      appId: "1:558154350070:web:148fe42b5ea4b6ffb11bd7",
-      measurementId: "G-G71634GM23"
-    };
+  // async getApiKey() {
+  //   const firebaseConfig = {
+  //     apiKey: "AIzaSyDhwxnX29e2ceGu-_gDzPU3sNy91Db35lQ",
+  //     authDomain: "fir-94da5.firebaseapp.com",
+  //     databaseURL: "https://fir-94da5-default-rtdb.firebaseio.com",
+  //     projectId: "fir-94da5",
+  //     storageBucket: "fir-94da5.appspot.com",
+  //     messagingSenderId: "558154350070",
+  //     appId: "1:558154350070:web:148fe42b5ea4b6ffb11bd7",
+  //     measurementId: "G-G71634GM23"
+  //   };
     
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);
-    const apiRef = ref(database, 'geoApiKey');
-
-    onValue(apiRef, (snapshot) => {
-      const data = snapshot.val();
-      this.updateApiKey(data);
-    });
-  }
+  //   const app = initializeApp(firebaseConfig);
+  //   const database = getDatabase(app);
+  //   const dbRef = ref(database, 'geoApiKey');
+  //   const snapshot = (await get(dbRef));
+  //   const api = snapshot.val();
+  //   return api;
+  // }
 
   
-  updateApiKey(data: string){
-    this.api_key = data;
-    console.log(this.api_key);
-  }
-
-
   getGeoData(){
-    console.log(this.api_key);
     return this.http.get<UserLocPreferenceAPI>(this.url);
   }
 
@@ -75,4 +96,16 @@ export class MainService {
   getLanguage() {
     return this.currentLanguage;
   }
+
+
+  getCategories(){
+    return this.categories;
+  }
+
+
+  getProductCount(){
+    return this.productCount;
+  }
+
 }
+

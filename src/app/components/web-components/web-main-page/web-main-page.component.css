@@ -515,14 +515,14 @@
   }
 
   .left-arrow-icon {
-    background: url('../../../assets/images/icons/left-arrow.png');
+    background: url('../../../../assets/images/icons/left-arrow.png');
     margin: auto;
     height: 22px;
     width: 13px;
   }
 
   .left:hover .left-arrow-icon {
-    background: url('../../../assets/images/icons/left-arrow-hover.png');
+    background: url('../../../../assets/images/icons/left-arrow-hover.png');
   }
 
   .right {
@@ -557,20 +557,19 @@
   }
 
   .right-arrow-icon {
-    background: url('../../../assets/images/icons/right-arrow.png');
+    background: url('../../../../assets/images/icons/right-arrow.png');
     margin: auto;
     height: 22px;
     width: 13px;
   }
 
   .right:hover .right-arrow-icon {
-    background: url('../../../assets/images/icons/right-arrow-hover.png');
+    background: url('../../../../assets/images/icons/right-arrow-hover.png');
   }
 
   .browser-history-recommendations {
     width: 100%;
     background-color: white;
-    height: 100vh;
   }
 
   .recommendations {
@@ -662,14 +661,14 @@
 }
 
   .history-right-arrow {
-    background: url('../../../assets/images/icons/history-right-arrow.png');
+    background: url('../../../../assets/images/icons/history-right-arrow.png');
     margin: auto;
     height: 20px;
     width: 19px;
   }
 
   .history-left-arrow {
-    background: url('../../../assets/images/icons/history-left-arrow.png');
+    background: url('../../../../assets/images/icons/history-left-arrow.png');
     margin: auto;
     height: 20px;
     width: 19px;

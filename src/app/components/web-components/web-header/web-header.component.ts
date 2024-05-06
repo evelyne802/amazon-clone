@@ -1,16 +1,16 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { UserLocPreference } from '../../../types';
+import { UserLocPreference } from '../../../../types';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { MainService } from '../../../backend/main.service';
+import { MainService } from '../../../../backend/main.service';
 import { RouterLink } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { LocationPopupComponent } from '../location-popup/location-popup.component';
 import { SignInPopupComponent } from '../sign-in-popup/sign-in-popup.component';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-web-header',
   standalone: true,
   imports: [
     HttpClientModule,
@@ -18,10 +18,10 @@ import { SignInPopupComponent } from '../sign-in-popup/sign-in-popup.component';
     CommonModule,
     RouterLink,
   ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  templateUrl: './web-header.component.html',
+  styleUrl: './web-header.component.css'
 })
-export class HeaderComponent {
+export class WebHeaderComponent {
   userLocDetails : UserLocPreference = {
     country: {name: '', flag: ''},
     currency: {name: '', code: '', symbol: ''},
@@ -29,44 +29,18 @@ export class HeaderComponent {
   };
 
   selectedCategory = '';
-  categories = ["All Departments", 
-              "Arts & Crafts", 
-              "Automotive", 
-              "Baby", 
-              "Beauty & Persoal Care",
-              "Books",
-              "Boy's Fashion",
-              "Computers",
-              "Deals",
-              "Digital Music",
-              "Electronics",
-              "Girl's Fashion",
-              "Health & Household",
-              "Home & Kitchen",
-              "Industrial & Scientific",
-              "Kindle Store",
-              "Luggage",
-              "Men's Fashion",
-              "Movies & TV",
-              "Music, Cds & Vinyl",
-              "Pet Supplies",
-              "Prime Video",
-              "Sofrware",
-              "Sports & Outdoors",
-              "Tools & Home Improvement",
-              "Toys & Games",
-              "Video Games",
-              "Women's Fashion"];
-    productCount : number = 0;
+  categories: string[] = [];
+  productCount : number = 0;
 
-    signInDialog : any;
+  signInDialog : any;
 
   constructor( private mainService: MainService, 
                public dialog: MatDialog,) { }
 
   ngOnInit(){
+    this.categories = this.mainService.getCategories();
+    this.productCount = this.mainService.getProductCount();
     this.getUserLoc(); 
-
     this.openSignInDialog(); 
     this.openLocDialog();  
 
@@ -80,7 +54,6 @@ export class HeaderComponent {
       });
     });
   }
-
 
   getUserLoc(){
     this.mainService.getGeoData()
