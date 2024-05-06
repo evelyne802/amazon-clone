@@ -32,11 +32,18 @@ export class MobileHeaderComponent {
   categories: string[] = [];
   selectedCategory = '';
   productCount = 0;
+  popUpClassList = 'delivery-loc-popup'
 
   ngOnInit(){
     this.categories = this.mainService.getCategories();
     this.productCount = this.mainService.getProductCount();
     this.getUserLoc(); 
+
+    $( "#dismiss" ).on( "click", function() {
+      $( "#popup" ).slideUp( "slow", function() {
+        // Animation complete.
+      });
+    });
   }
 
 
@@ -56,6 +63,12 @@ export class MobileHeaderComponent {
   onSelect(){
     const searchBar = document.getElementById("search_input") as HTMLElement;
     window.setTimeout(() => searchBar.focus(), 0);
+  }
+
+
+  closePopUp(){
+    console.log('fhjkjfh');
+
   }
 
 }

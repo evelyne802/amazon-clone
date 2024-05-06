@@ -39,9 +39,16 @@
     <label class="delivery-txt">Deliver to {{ userLocDetails.country.name }}</label>
     <div class="arrow down"></div>
 </div>
-<!-- <div class="delivery-loc-popup animate__animated animate__slideInDown">
-        
-</div> -->
+<div [class]="popUpClassList" id="popup">
+    <p class="location-txt">
+        We're showing you items that ship to <b>{{ userLocDetails.country.name }}</b>. 
+        To see items that ship to a different country, change your delivery address.
+    </p>
+    <div class="buttons">
+        <button id="dismiss" class="dismiss popup-button" (click)="closePopUp()">Dismiss</button>
+        <button class="changeAddress yellow-button popup-button">Change Address</button>
+    </div>
+</div>
 <div class="temp-header animate__animated animate__slideInDown">
     <label class="temp-header-txt">We are experiencing shipping delays in your area. Please expect extended delivery time.</label>
 </div>
