@@ -1,21 +1,42 @@
 import { Component } from '@angular/core';
 import { MobileHeaderComponent } from '../mobile-header/mobile-header.component';
 import { MobileFooterComponent } from '../mobile-footer/mobile-footer.component';
+import { ProductDealsTableComponent } from '../product-deals-table/product-deals-table.component';
+import { ProductDealsListComponent } from '../product-deals-list/product-deals-list.component';
+import { CategoryReccSection, Deal } from '../../../../types';
+import { MainService } from '../../../../backend/main.service';
+import { ProductsService } from '../../../../backend/products.service';
+import { CategoryDealsTableComponent } from '../category-deals-table/category-deals-table.component';
 
 @Component({
   selector: 'app-mobile-main-page',
   standalone: true,
   imports: [
     MobileHeaderComponent,
-    MobileFooterComponent
+    MobileFooterComponent,
+    ProductDealsTableComponent,
+    ProductDealsListComponent,
+    CategoryDealsTableComponent
   ],
   templateUrl: './mobile-main-page.component.html',
   styleUrl: './mobile-main-page.component.css'
 })
 export class MobileMainPageComponent {
 
+  constructor( private productsService: ProductsService) { }
+
+  under25Deal: Deal =  { description: 'Deals for uou under $25', products: this.productsService.getDealsUnder25().slice(0,4) };
+  booksDeal: Deal = { description: 'Deals for you in Books', products: this.productsService.getBooks().slice(0,4) };
+  mostLovedDeal: Deal = { description: 'Most - loved deals for you', products: this.productsService.getMostLoved().slice(0,4) };
+  recommendedDeal: Deal = { description: 'Recommended deals for you', products: this.productsService.getRecommended().slice(0,4) };
+
+  beauty: CategoryReccSection = { description: 'Unveil your radiance', categories: this.productsService.getBeautyCategories() }
+  shoes: CategoryReccSection = { description: 'Shoes Under $60', categories: this.productsService.getShoesCategories() }
+
+
   ngOnInit(){
     this.mainCarousel();
+    console.log(this.under25Deal);
   }
 
 

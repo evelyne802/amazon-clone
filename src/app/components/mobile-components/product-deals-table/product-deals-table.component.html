@@ -1,0 +1,17 @@
+<div class="product-deals-div">
+    <label class="deal-txt">{{ deal.description }}</label>
+    <div class="products-table">
+        <div class="product" *ngFor="let product of deal.products">
+            <div class="product-img-bg">
+                <img class="product-img" [src]="product.productPicture" alt="image" />
+            </div><br>
+            <div>
+                <div class="deal-of-the-day">
+                    {{ product.percentageOff }}% off
+                </div>
+                <label class="red">Limited time deal</label><br>
+            </div>
+        </div>
+    </div>
+    <a>See all deals</a>
+</div>

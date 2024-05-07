@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { WebHeaderComponent } from '../web-header/web-header.component';
 import { WebFooterComponent } from '../web-footer/web-footer.component';
 import 'animate.css';
-import { Product, ReccomendedByHistoryProduct } from '../../../../types';
+import { Product, RecommendedByHistoryProduct } from '../../../../types';
 import { ProductsService } from '../../../../backend/products.service';
 import { NgFor, NgIf } from '@angular/common';
 
@@ -29,11 +29,11 @@ export class WebMainPageComponent {
   babyGifts: Product[] = this.productService.getBabyGifts();
   electronics: Product[] = this.productService.getElectronics();
 
-  recByHistory: ReccomendedByHistoryProduct[] = this.productService.getReccomendedByHistory();
+  recByHistory: RecommendedByHistoryProduct[] = this.productService.getRecommendedByHistory();
   productsPerPage: number = 7;
   pagesNum: number = Math.ceil(this.recByHistory.length/this.productsPerPage);
   page: number = 1;
-  recByHistoryDisplay: ReccomendedByHistoryProduct[] = [];
+  recByHistoryDisplay: RecommendedByHistoryProduct[] = [];
 
   windowWidth = window.innerWidth;
 

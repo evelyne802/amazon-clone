@@ -36,7 +36,7 @@ export type Product = {
     description: string;
 }
 
-export type ReccomendedByHistoryProduct = {
+export type RecommendedByHistoryProduct = {
     productPicture: string;
     description: string;
     price: number;
@@ -53,4 +53,19 @@ export type ReccomendedByHistoryProduct = {
 export interface DialogData {
     popUpType: 'location' | 'signIn' ;
     userDetails: UserLocPreference;
-  }
+}
+
+export type Deal = {
+    description: string;
+    products: Product[];
+}
+
+export type CategoryRecc = {
+    name: string;
+    picture: string;
+}
+
+export type CategoryReccSection = {
+    description: string;
+    categories: CategoryRecc[];
+}

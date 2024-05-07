@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product, ReccomendedByHistoryProduct } from '../types';
+import { CategoryRecc, Product, RecommendedByHistoryProduct } from '../types';
 
 @Injectable({
   providedIn: 'root'
@@ -238,7 +238,7 @@ export class ProductsService {
   ]
 
 
-  reccomendedByHistory: ReccomendedByHistoryProduct[] = [
+  recommendedByHistory: RecommendedByHistoryProduct[] = [
     { productPicture: 'https://images-na.ssl-images-amazon.com/images/I/81drOrfKBBL._AC_UL160_SR160,160_.jpg',
       description: 'Wahl Lithium Ion Pro Rechargeable Cord/Cordless Hair Clippers for Men, Woman, & Children with Smart Charge Technology', 
       category: 'Hair Clippers', price: 35.40, amazonsChoice: true, numShippingDays: 15, rating: 4.5, ratingsNum: 1987, shippingCost: 27.15,
@@ -305,10 +305,57 @@ export class ProductsService {
     //   ratingImg: '', deliveryDate: ''},
   ]
 
+  mostLoved: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/71+R13MaLHL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 29, price: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/81uxod04IjL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 40, price: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/71beKwzfWFL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 22, price: 0 },  
+    { productPicture: 'https://m.media-amazon.com/images/I/71tAYh49OeL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 10, price: 0 },
+  ]
+
+  recommended: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/81RcKMPzd+L._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 10, price: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/81Oe49xaKfS._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 11, price: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/61CiMkeJ9lL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 17, price: 0 },  
+    { productPicture: 'https://m.media-amazon.com/images/I/5158IqcAkhL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 10, price: 0 },
+  ]
+
+  books: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/71ziMCan1ZL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 37, price: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/91lVLEs9QwL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 38, price: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/71jy7HV2hFL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 31, price: 0 },  
+    { productPicture: 'https://m.media-amazon.com/images/I/81o-PyNHxbL._AC_SY310_.jpg', 
+       description: '', listPrice: 0, percentageOff: 51, price: 0 },
+  ]
+
+  beautyCategories: CategoryRecc[] = [
+    { name: 'Hair Care', picture: 'https://m.media-amazon.com/images/I/41+i4d+1YXL._SR420,420_.jpg' },
+    { name: 'Fragrances', picture: 'https://m.media-amazon.com/images/I/4115ssxY8RL._SR420,420_.jpg' },
+    { name: 'Make Up', picture: 'https://m.media-amazon.com/images/I/51F8Stay1iL._SR420,420_.jpg' },
+    { name: 'Skin Care', picture: 'https://m.media-amazon.com/images/I/41hBTWbTOvL._SR420,420_.jpg' },
+  ]
+
+  shoesCategories: CategoryRecc[] = [
+    { name: "Women's", picture: 'https://m.media-amazon.com/images/I/3170xCVr26L._SR420,420_.jpg' },
+    { name: "men's", picture: 'https://m.media-amazon.com/images/I/61netzbPw4L._SR420,420_.png' },
+    { name: "Girl's", picture: 'https://m.media-amazon.com/images/I/31dhX4v0z6L._SR420,420_.jpg' },
+    { name: "Boy's", picture: 'https://m.media-amazon.com/images/I/31ANw+xlmCL._SR420,420_.jpg' },
+  ]
+
   constructor() { 
-    this.reccomendedByHistory.forEach((obj) => obj.ratingImg = this.getRatingImage(obj.rating));
-    this.reccomendedByHistory.forEach((obj) => obj.ratingsNum = this.addCommas(obj.ratingsNum));
-    this.reccomendedByHistory.forEach((obj) => obj.deliveryDate = this.getEstimatedDeliveryDate(obj.numShippingDays));
+    this.recommendedByHistory.forEach((obj) => obj.ratingImg = this.getRatingImage(obj.rating));
+    this.recommendedByHistory.forEach((obj) => obj.ratingsNum = this.addCommas(obj.ratingsNum));
+    this.recommendedByHistory.forEach((obj) => obj.deliveryDate = this.getEstimatedDeliveryDate(obj.numShippingDays));
   }
 
   getHomeImprovementProducts(){
@@ -339,8 +386,28 @@ export class ProductsService {
     return this.electronics;
   }
 
-  getReccomendedByHistory(){
-    return this.reccomendedByHistory;
+  getRecommendedByHistory(){
+    return this.recommendedByHistory;
+  }
+
+  getMostLoved(){
+    return this.mostLoved;
+  }
+
+  getRecommended(){
+    return this.recommended;
+  }
+
+  getBooks() {
+    return this.books;
+  }
+
+  getShoesCategories() {
+    return this.shoesCategories;
+  }
+
+  getBeautyCategories() {
+    return this.beautyCategories;
   }
 
   getRatingImage(rating: number){
@@ -368,4 +435,6 @@ export class ProductsService {
     delivery.setDate(delivery.getDate() + numDays);
     return `${weekdays[delivery.getDay()]}, ${delivery.toLocaleString('default', { month: 'long' })} ${delivery.getDate()}`;
   }
+
+
 }

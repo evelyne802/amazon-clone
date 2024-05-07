@@ -1,0 +1,12 @@
+<div class="product-deals-div">
+    <label class="deal-txt">{{ categories.description }}</label>
+    <div class="products-table">
+        <div class="product" *ngFor="let category of categories.categories">
+            <div class="product-img-bg">
+                <img class="product-img" [src]="category.picture" alt="image" />
+            </div><br>
+            <label class="category-txt">{{ category.name }}</label>
+        </div>
+    </div>
+    <a>See all deals</a>
+</div>
