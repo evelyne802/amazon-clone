@@ -15,12 +15,12 @@ import { RouterLink } from '@angular/router';
 export class WebFooterComponent {
 
   currentYear = new Date().getFullYear();
-
   userLocDetails : UserLocPreference = {
     country: {name: '', flag: ''},
     currency: {name: '', code: '', symbol: ''},
     language: { name: 'English', code: 'EN', iconPath: '../../../assets/images/english-icon.png' } 
   };
+  
   constructor(private mainService: MainService) {}
 
   ngOnInit(){

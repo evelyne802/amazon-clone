@@ -1,0 +1,163 @@
+html, body {
+    font-family: Amazon Ember;
+    color:white;
+    text-align: center;
+}
+
+.back-to-top {
+    background-color: #37475a;
+    height:17px;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+.back-to-top:hover {
+    background-color: #465a71;
+    cursor: pointer;
+}
+
+.top-footer {
+    width: 100%;
+    background-color: #232f3e;
+    padding: 16px 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bottom-footer {
+    background-color: #131a22;
+    min-height: 7em;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bottom-footer label {
+    color: #DDD;
+    font-size: 12px;
+    font-family: Amazon Ember;
+}
+
+.bottom-footer label:hover {
+    cursor: pointer;
+}
+
+table {
+    color:#999;
+    font-size: 12px;
+    font-family: Amazon Ember;
+    display: inline-table;
+}
+
+td {
+    text-align: left;
+    width: 90px;
+    padding: 15px 30px;
+}
+
+.section {
+    display: inline-block;  
+    position: relative;
+    padding: 2% 4%;
+    text-align: left;
+}
+
+p {
+    color: #DDD;
+    line-height: 27px;
+    font-size: 14px;
+    display: inline-grid;
+    max-width: 178px;
+}
+
+.line-height {
+    line-height: 19px;
+}
+
+a:hover {
+    font-family: Amazon Ember light;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+label {
+    font-family: Amazon Ember Bold;
+    font-size: 16px;
+}
+
+.line {
+    background-color: #3a4553;
+    position: relative;
+    top: 2.3em;
+    border: none;
+    height: 0.01em;
+}
+
+.language-currency-section {
+    display: inline-block;  
+    position: relative;
+    padding: 10px 0;
+    top:20px;
+}
+
+.logo {
+    height: 20px;
+    padding: 2px 5px;
+    margin: -10px 30px;
+
+}
+
+.logo:hover {
+    cursor:pointer;
+}
+
+button {
+    border: none;
+    padding: 6px 18px 6px 8px;
+    background-color: #131a22;
+    margin: 0 8px 0 0;
+    display: inline-flex ;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.globe-icon{
+    height:13px;
+    position: relative;
+    top:2px;
+}
+
+.btn-txt {
+    color: #CCC;
+    font-family: Amazon Ember;
+    font-size: 13px;
+    padding: 0 7.8px;
+}
+
+.btn-txt:hover {
+    cursor:pointer;
+}
+
+.country-flag {
+    height: 13px;
+    top:2px;
+    position: relative;
+}
+.copyright-section {
+    position: relative;
+}
+
+.footer-icon {
+    height:18px;
+    position:relative;
+    top:5px;
+}
+
+.link {
+    color: #DDD;
+    font-size: 12px;
+    font-family: Amazon Ember;
+    padding: 0 10px;
+}

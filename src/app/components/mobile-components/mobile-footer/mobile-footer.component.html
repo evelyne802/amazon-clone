@@ -1,1 +1,41 @@
-<p>mobile-footer works!</p>
+<body>
+    <div (click)="scrollToTop($event)" class="back-to-top">Back to top</div>
+    <div class="top-footer">
+        <div class="section">
+            <p>
+                <a>Amazon.com</a>
+                <a>Your Lists</a>
+                <a>Find a Gift</a>
+                <a>Browsing History</a>
+                <a>Returns</a>
+            </p>
+        </div>
+        <div class="section">
+            <p>
+                <a>Your Orders</a>
+                <a>Gift Cartds & Registry</a>
+                <a>Your Account</a>
+                <a>Sell Products on Amazon</a>
+                <a>Recalls and Product Safety Alerts</a>
+                <a>Customer Service</a>
+            </p>
+        </div>
+    </div> 
+
+    <div class="bottom-footer">
+        <div class="language-currency-section">
+            <button>
+                <img src="../../../assets/images/icons/globe-icon.png" class="globe-icon">
+                <label class="btn-txt">{{ userLocDetails.language.name }}</label>
+            </button>
+            <button>
+                <label class="btn-txt">{{ userLocDetails.currency.symbol }}</label>
+                <label class="btn-txt">{{ userLocDetails.currency.code }} - {{ userLocDetails.currency.name }}</label>
+            </button>
+            <button>
+                <img class='country-flag' [src]="userLocDetails.country.flag">
+                <label class="btn-txt">{{ userLocDetails.country.name }}</label>
+            </button>
+        </div>
+    </div>
+</body>
