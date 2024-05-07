@@ -172,3 +172,47 @@
     height: 200px;
     border-radius: 8px;
 }
+
+.sign-in-div {
+    width: 100%;
+    background-color: #fff;
+    font-size: 18px;
+    font-family: 'Amazon Ember Bold';
+    position: relative;
+    height: 130px;
+    margin-top: 85px;
+    text-align: center;
+}
+
+.sign-in-txt {
+    position: absolute;
+    left: 3%;
+    margin: 10px;
+}
+
+.sign-in-button {
+    background-color: #ffd814;
+    font-size: 16px;
+    font-family: "Amazon Ember";
+    padding: 12px 16px;
+    position: relative;
+    width: 92%;
+    border: none;
+    border-radius: 8px;
+    margin-top: 45px;
+}
+
+.create-acc-txt{
+    font-family: "Amazon Ember";
+    position: absolute;
+    left: 5%;
+    margin-top: 100px;
+    font-size: 15px;
+    color: #007185;
+}
+
+.sign-in-button:active {
+    background-color: #ffbc14;
+    box-shadow: 0px 1px 6px #008296;
+    border: solid 2px #ffffff;
+}
