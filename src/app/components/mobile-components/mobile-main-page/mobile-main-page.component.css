@@ -140,7 +140,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
 
 .content-wrap {
-    padding-bottom: var( --top-footer-height);    
+    /* padding-bottom: var( --top-footer-height);     */
     background-color: #e3e6e6;
     z-index: 2;
     position: relative;
@@ -211,8 +211,97 @@
     color: #007185;
 }
 
+.create-acc-txt:active {
+    text-decoration: underline;
+}
+
 .sign-in-button:active {
     background-color: #ffbc14;
     box-shadow: 0px 1px 6px #008296;
     border: solid 2px #ffffff;
+}
+
+.end-page {
+    text-align: center;
+    text-overflow: ellipsis;
+}
+
+.end-txt {
+    font-size: 13px;
+    color: #555555;
+    overflow: hidden;
+    margin: 5px;
+    font-family: "Amazon Ember";
+}
+
+._interactive-footer-card_style_dividerContainer__2pJBr ._interactive-footer-card_style_divider__C4znv {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+    position: relative;
+}
+
+.explore-div {
+    position: relative;
+    padding: 15px;
+    height: 355px;
+    background-color: #fff;
+    margin-top: 4px;
+}
+
+.depts {
+    margin-top: 10px;
+    grid-gap: 8px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.dept-img {
+    height: 65px;
+    border-radius: 4px;
+}
+
+.department {
+    text-align: left;
+    height: 90px;
+}
+
+.dept-name-txt {
+    font-family: "Amazon Ember";
+    font-size: 15px;
+}
+
+.explore-txt {
+    font-family: "Amazon Ember Bold";
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+}
+
+a {
+    font-family: Amazon Ember;
+    color: #007185;
+    margin-top: 15px;
+    font-size: 15px;
+    position: absolute;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.left-hr{
+    position: absolute;
+    left: 0;
+    width: 18%;
+    margin-top: 12px;
+}
+
+
+.right-hr{
+    position: absolute;
+    right: 0;
+    width: 18%;
+    margin-top: -8px; 
 }

@@ -1,0 +1,22 @@
+.container {
+    background-color: white;
+    height: 410px;
+    margin-top: 5px;
+    padding: 10px;
+}
+
+label {
+    font-family: "Amazon Ember Bold";
+    font-size: 18px;
+    position: relative;
+    margin: 15px;
+    display: inline-block;
+}
+
+img {
+    border-radius: 4px;
+    height: 345px;
+    margin: auto;
+    display: flex;
+    position: relative;
+}

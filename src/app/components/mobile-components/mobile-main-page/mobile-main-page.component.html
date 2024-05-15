@@ -63,11 +63,42 @@
     </div>
 
     <app-product-deals-table [deal]="under25Deal"></app-product-deals-table>
-    <!-- <app-category-deals-table [categories]="beauty"></app-category-deals-table> -->
+    <app-category-deals-table [categories]="beauty" [productsNum]="4"></app-category-deals-table>
     <app-product-deals-table [deal]="booksDeal"></app-product-deals-table>
-    <!-- <app-category-deals-table [categories]="shoes"></app-category-deals-table> -->
+    <app-category-deals-table [categories]="techAccessories" [productsNum]="4"></app-category-deals-table>
+    <app-product-deals-list [deal]="kitchenTopSellersDeal"></app-product-deals-list>
+    <app-category-deals-table [categories]="shoes" [productsNum]="4"></app-category-deals-table>
     <app-product-deals-table [deal]="mostLovedDeal"></app-product-deals-table>
+    <app-single-suggestion [category]="homeAndKitchenUnder30"></app-single-suggestion>
+    <app-category-deals-table [categories]="favoriteToys" [productsNum]="4"></app-category-deals-table>
     <app-product-deals-table [deal]="recommendedDeal"></app-product-deals-table>
+    <app-category-deals-table [categories]="home" [productsNum]="4"></app-category-deals-table>
+    <app-product-deals-list [deal]="homeTopSellersDeal"></app-product-deals-list>
+    <app-single-suggestion [category]="toysUnder30"></app-single-suggestion>
+    <app-category-deals-table [categories]="healthAndBeauty" [productsNum]="9"></app-category-deals-table>
+    <app-product-deals-list [deal]="babyTopSellers"></app-product-deals-list>
+    <app-category-deals-table [categories]="girlsEssentials" [productsNum]="4"></app-category-deals-table>
+    <app-product-deals-list [deal]="pcProducts"></app-product-deals-list>
+    <app-single-suggestion [category]="mustHaveDeals"></app-single-suggestion>
+
+    <div class="end-page">
+        <hr class="left-hr">
+        <label class="end-txt">You've reached the end. Keep exploring!</label>
+        <hr class="right-hr">
+    </div>
+
+    <div class="explore-div">
+        <label class="explore-txt">Explore Departments</label>
+        <div class="depts">
+            <div class="department" *ngFor="let department of exploreDepartments">
+                <div class="product-img-bg">
+                    <img class="dept-img" [src]="department.picture" alt="image" />
+                </div>
+                <label class="dept-name-txt">{{ department.name }}</label>
+            </div>
+        </div>
+        <a>All Departments</a>
+    </div>
 
 </div>
 

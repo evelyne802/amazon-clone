@@ -1,4 +1,4 @@
-<div class="product-deals-div">
+<div *ngIf="productsNum == 4 && !onlyPictures" class="product-deals-div">
     <label class="deal-txt">{{ categories.description }}</label>
     <div class="products-table">
         <div class="product" *ngFor="let category of categories.categories">
@@ -8,5 +8,29 @@
             <label class="category-txt">{{ category.name }}</label>
         </div>
     </div>
-    <a>See all deals</a>
+    <a>Shop more</a>
+</div>
+
+<div *ngIf="productsNum == 4 && onlyPictures" class="product-deals-div-no-txt">
+    <label class="deal-txt-only-pics">{{ categories.description }}</label>
+    <div class="products-table">
+        <div class="product" *ngFor="let category of categories.categories">
+            <div class="product-img-bg">
+                <img class="product-img" [src]="category.picture" alt="image" />
+            </div>
+        </div>
+    </div>
+    <a>Shop now</a>
+</div>
+
+<div *ngIf="productsNum == 9" class="nine-product-deals-div">
+    <label class="nine-deal-txt">{{ categories.description }}</label>
+    <div class="nine-products-table">
+        <div class="product" *ngFor="let category of categories.categories">
+            <div class="nine-product-img-bg">
+                <img class="product-img" [src]="category.picture" alt="image" />
+            </div><br>
+        </div>
+    </div>
+    <a>See more</a>
 </div>

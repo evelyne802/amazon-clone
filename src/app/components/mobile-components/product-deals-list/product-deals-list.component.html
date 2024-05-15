@@ -1,0 +1,19 @@
+<div class="container">
+    <label class="deal-txt">{{ deal.description }}</label>
+    <div class="products-list">
+        <div class="product" *ngFor="let product of deal.products" >
+           <div class="product-img-card">
+                <img [src]="product.productPicture" alt="image" />
+           </div>
+           <div class="description-div">
+                <label>{{ product.description }}</label>
+                <div class="prices">
+                    <label class="little-txt">$</label>
+                    <label class="price">{{ getPrice(product.price) }}</label>
+                    <label class="little-txt">{{ getNumberAfterComma(product.price) }}</label>
+                    <label class="listedPrice" *ngIf="product.percentageOff != 0">List: <label class="line-through">{{ product.listPrice }}</label></label>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

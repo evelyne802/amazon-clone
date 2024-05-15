@@ -338,6 +338,42 @@ export class ProductsService {
        description: '', listPrice: 0, percentageOff: 51, price: 0 },
   ]
 
+  kitchenTopSellers: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/81m5TfCz3KL._AC_SY160_.jpg', 
+    description: 'Cuisinel Cast Iron Skillets Set - 4-Piece Chef Pans Kit - 6" + 8" + 10"…', listPrice: 69.99, percentageOff: 21, price: 55.24 },
+    { productPicture: 'https://m.media-amazon.com/images/I/81tV-nZg9-L._AC_SY160_.jpg', 
+    description: 'Vegetable Chopper, Pro Onion Chopper, Multifunctional 13 in 1 F…', listPrice: 33.99, percentageOff: 50, price: 16.49 },
+    { productPicture: 'https://m.media-amazon.com/images/I/91IRGJVi6xL._AC_SY160_.jpg', 
+    description: 'Rubbermaid 28-Piece Food Storage Containers with Snap Bases for Ea…', listPrice: 49.99, percentageOff: 20, price: 39.99 },
+  ];
+
+  homeTopSellers: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/61sK0f196mL._AC_SY160_.jpg', 
+    description: 'Kamopot Collapsible Wagon Cart,Foldable Beach Wagon, Foldin…', listPrice: 84.77, percentageOff: 0, price: 84.77 },
+    { productPicture: 'https://m.media-amazon.com/images/I/81RLgrUwG5L._AC_SY160_.jpg', 
+    description: 'EUDELE Adhesive Shower Caddy, 5 Pack Rustproof Stainless Steel Bat…', listPrice: 69.99, percentageOff: 72, price: 19.98 },
+    { productPicture: 'https://m.media-amazon.com/images/I/61Na4nJ1nlL._AC_SY160_.jpg', 
+    description: 'downluxe Goose Down Pillows - Hotel Collection Feather Pillows S…', listPrice: 59.18, percentageOff: 8, price: 54.19 },
+  ];
+
+  babyTopSellers: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/61FZF2B-gIL._AC_SY160_.jpg',
+    description: 'MAM Variety Pack Baby Pacifier, Includes 3 Types of Pacifiers, Nippl…', price: 10.28 , listPrice: 10.28 , percentageOff: 0  },
+    { productPicture: 'https://m.media-amazon.com/images/I/71b0m8tLf-L._AC_SY160_.jpg',
+    description: 'OXO Plastic Tot Space Saving Drying Rack For Kitchen', price: 25.29 , listPrice:25.29 , percentageOff: 0 },
+    { productPicture: 'https://m.media-amazon.com/images/I/61L1oSn0UWL._AC_SY160_.jpg',
+    description: 'Original + Night 4-Pack, 0-6M, Girl', price: 14.38 , listPrice: 14.38 , percentageOff: 0 },
+  ]
+
+  pc: Product[] = [
+    { productPicture: 'https://m.media-amazon.com/images/I/71tJLLp+x+L._AC_SY160_.jpg',
+    description: 'SteelSeries New Arctis Nova 3 Multi-Platform Gaming Headset - Signat…', price: 88.00, listPrice:99.99 , percentageOff: 12 },
+    { productPicture: 'https://m.media-amazon.com/images/I/519fU1zMNxL._AC_SY160_.jpg',
+    description: 'Crucial X9 1TB Portable SSD - Up to 1050MB/s Read - PC and Mac, Ligh…', price:76.99 , listPrice: 94.73, percentageOff: 19 },
+    { productPicture: 'https://m.media-amazon.com/images/I/81YY5q-fRYL._AC_SY160_.jpg',
+    description: "VILVA Portable-Monitor-for-Laptop - 15.6'' 1080P FHD IPS Display USB-…", price:85.34 , listPrice: 89.99, percentageOff: 5 },
+  ]
+
   beautyCategories: CategoryRecc[] = [
     { name: 'Hair Care', picture: 'https://m.media-amazon.com/images/I/41+i4d+1YXL._SR420,420_.jpg' },
     { name: 'Fragrances', picture: 'https://m.media-amazon.com/images/I/4115ssxY8RL._SR420,420_.jpg' },
@@ -352,10 +388,82 @@ export class ProductsService {
     { name: "Boy's", picture: 'https://m.media-amazon.com/images/I/31ANw+xlmCL._SR420,420_.jpg' },
   ]
 
+  homeCategories: CategoryRecc[] = [
+    { name: 'Kitchen essentials', picture: 'https://m.media-amazon.com/images/I/41dEpCmTRFL._SR420,420_.jpg' },
+    { name: 'Home comfort', picture: 'https://m.media-amazon.com/images/I/41cXdDKGU6L._SR420,420_.jpg' },
+    { name: 'Decorate with elegance', picture: 'https://m.media-amazon.com/images/I/41EvbQ64I2L._SR420,420_.jpg' },
+    { name: 'Light it right', picture: 'https://m.media-amazon.com/images/I/41hJC3LJ2aL._SR420,420_.jpg' },
+  ]
+
+  techAccessories: CategoryRecc[] = [
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71IOmppmHBL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/61PdZczFXSL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/61mK2ooNdTL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71nKG2w6ENL._AC_SY400_.jpg' },
+  ]
+
+  favoriteToys: CategoryRecc[] = [
+    { name: '', picture: 'https://m.media-amazon.com/images/I/61-7daVNLSL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/918TH+djwzL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71Bt5N4sMmL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/61uJoerHG7L._AC_SY400_.jpg' },
+  ]
+
+  girlsEssentials: CategoryRecc[] = [
+    { name: '', picture: 'https://m.media-amazon.com/images/I/91cQnfBtLfL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/61oQDYgzSbL._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/81Angw3PQ-L._AC_SY400_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/718GLjr2T5S._AC_SY400_.jpg' },
+  ]
+
+  healthAndBeauty: CategoryRecc[] = [
+    { name: '', picture: 'https://m.media-amazon.com/images/I/61Kn597KGkL._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/512V1GCv-zL._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71R5xBOtLRL._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71HK623s4YL._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/716wfgwC9ML._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/719pUQCxnmL._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71YmIz+ez+L._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/71oyLvFUnEL._AC_SS260_.jpg' },
+    { name: '', picture: 'https://m.media-amazon.com/images/I/81ta23KbMCL._AC_SS260_.jpg' }
+  ]
+
+  exploreDepartments: CategoryRecc[] = [
+    { name: 'Beauty', picture: 'https://m.media-amazon.com/images/I/71wBEshTCUL._SR540,200_.png' },
+    { name: 'Home and Kitchen', picture: 'https://m.media-amazon.com/images/I/61uornUdm-L._SR540,200_.png' },
+    { name: 'Sports and Outdoors', picture: 'https://m.media-amazon.com/images/I/71sUjeGHWdL._SR540,200_.png' },
+    { name: 'Electronics', picture: 'https://m.media-amazon.com/images/I/71JhsiGGjqL._SR540,200_.png' },
+    { name: 'Outdoor Clothing', picture: 'https://m.media-amazon.com/images/I/71OooRMu+tL._SR540,200_.png' },
+    { name: 'Pet Supplies', picture: 'https://m.media-amazon.com/images/I/7166hIvPMnL._SR540,200_.png' }
+  ]
+
+  homeAndKitchenUnder30: CategoryRecc = { name: 'Home & Kitchen Under $30', picture: 'https://m.media-amazon.com/images/I/51cRUkQL3-L._SR1050,1050_.jpg'}
+
+  toysUnder30: CategoryRecc = { name: 'Toys Under $30', picture: 'https://m.media-amazon.com/images/I/61HgDXK2NvL._SR1050,1050_.jpg'}
+
+  mustHaveDeals: CategoryRecc = { name: 'Must-have deals for everyone', picture: 'https://m.media-amazon.com/images/I/5100xi2opNL._SR1050,1050_.jpg'}
+
+
   constructor() { 
     this.recommendedByHistory.forEach((obj) => obj.ratingImg = this.getRatingImage(obj.rating));
     this.recommendedByHistory.forEach((obj) => obj.ratingsNum = this.addCommas(obj.ratingsNum));
     this.recommendedByHistory.forEach((obj) => obj.deliveryDate = this.getEstimatedDeliveryDate(obj.numShippingDays));
+  }
+
+  getExploreDepartments(){
+    return this.exploreDepartments;
+  }
+
+  getHomeAndKitchenUnder30(){
+    return this.homeAndKitchenUnder30
+  }
+
+  getToysUnder30(){
+    return this.toysUnder30
+  }
+
+  getMustHaveDeals(){
+    return this.mustHaveDeals;
   }
 
   getHomeImprovementProducts(){
@@ -408,6 +516,42 @@ export class ProductsService {
 
   getBeautyCategories() {
     return this.beautyCategories;
+  }
+
+  getHomeCategories(){
+    return this.homeCategories;
+  }
+
+  getHealthAndBeautyCategories(){
+    return this.healthAndBeauty;
+  }
+
+  getKitchenTopSellers(){
+    return this.kitchenTopSellers;
+  }
+
+  getHomeTopSellers(){
+    return this.homeTopSellers;
+  }
+
+  getBabyTopSellers() {
+    return this.babyTopSellers;
+  }
+
+  getTechAccessories() {
+    return this.techAccessories;
+  }
+
+  getPc(){
+    return this.pc;
+  }
+
+  getGirlsEssentials(){
+    return this.girlsEssentials;
+  }
+
+  getFavoriteToys() {
+    return this.favoriteToys
   }
 
   getRatingImage(rating: number){

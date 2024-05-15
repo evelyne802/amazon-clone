@@ -3,10 +3,11 @@ import { MobileHeaderComponent } from '../mobile-header/mobile-header.component'
 import { MobileFooterComponent } from '../mobile-footer/mobile-footer.component';
 import { ProductDealsTableComponent } from '../product-deals-table/product-deals-table.component';
 import { ProductDealsListComponent } from '../product-deals-list/product-deals-list.component';
-import { CategoryReccSection, Deal } from '../../../../types';
-import { MainService } from '../../../../backend/main.service';
+import { CategoryRecc, CategoryReccSection, Deal } from '../../../../types';
 import { ProductsService } from '../../../../backend/products.service';
 import { CategoryDealsTableComponent } from '../category-deals-table/category-deals-table.component';
+import { NgFor } from '@angular/common';
+import { SingleSuggestionComponent } from '../single-suggestion/single-suggestion.component';
 
 @Component({
   selector: 'app-mobile-main-page',
@@ -16,7 +17,9 @@ import { CategoryDealsTableComponent } from '../category-deals-table/category-de
     MobileFooterComponent,
     ProductDealsTableComponent,
     ProductDealsListComponent,
-    CategoryDealsTableComponent
+    CategoryDealsTableComponent,
+    NgFor,
+    SingleSuggestionComponent
   ],
   templateUrl: './mobile-main-page.component.html',
   styleUrl: './mobile-main-page.component.css'
@@ -29,9 +32,21 @@ export class MobileMainPageComponent {
   booksDeal: Deal = { description: 'Deals for you in Books', products: this.productsService.getBooks().slice(0,4) };
   mostLovedDeal: Deal = { description: 'Most - loved deals for you', products: this.productsService.getMostLoved().slice(0,4) };
   recommendedDeal: Deal = { description: 'Recommended deals for you', products: this.productsService.getRecommended().slice(0,4) };
-
-  beauty: CategoryReccSection = { description: 'Unveil your radiance', categories: this.productsService.getBeautyCategories() }
-  shoes: CategoryReccSection = { description: 'Shoes Under $60', categories: this.productsService.getShoesCategories() }
+  kitchenTopSellersDeal: Deal = { description: 'International top sellers in Kitchen ', products: this.productsService.getKitchenTopSellers() };
+  homeTopSellersDeal: Deal = { description: 'International top sellers in Home', products: this.productsService.getHomeTopSellers() };
+  babyTopSellers: Deal = { description: 'Top Sellers in Baby Products for you', products: this.productsService.getBabyTopSellers() };
+  pcProducts: Deal = { description: 'Popular products in PC internationally', products: this.productsService.getPc() };
+  beauty: CategoryReccSection = { description: 'Unveil your radiance', categories: this.productsService.getBeautyCategories() };
+  shoes: CategoryReccSection = { description: 'Shoes Under $60', categories: this.productsService.getShoesCategories() };
+  home: CategoryReccSection = { description: 'Home harmony', categories: this.productsService.getHomeCategories() };
+  healthAndBeauty: CategoryReccSection = { description: 'Health & Beauty Products', categories: this.productsService.getHealthAndBeautyCategories() };
+  girlsEssentials: CategoryReccSection = { description: 'Girls’ everyday essentials', categories: this.productsService.getGirlsEssentials() };
+  techAccessories: CategoryReccSection = { description: 'Tech Accessories under $10', categories: this.productsService.getTechAccessories() };
+  favoriteToys: CategoryReccSection = { description: 'Our favorite Toys', categories: this.productsService.getFavoriteToys() };
+  exploreDepartments: CategoryRecc[] = this.productsService.getExploreDepartments();
+  homeAndKitchenUnder30: CategoryRecc = this.productsService.getHomeAndKitchenUnder30();
+  toysUnder30: CategoryRecc = this.productsService.getToysUnder30();
+  mustHaveDeals: CategoryRecc = this.productsService.getMustHaveDeals();
 
 
   ngOnInit(){
