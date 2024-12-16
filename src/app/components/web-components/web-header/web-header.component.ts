@@ -92,7 +92,7 @@ export class WebHeaderComponent {
     dialogRef.afterOpened().subscribe(_ => {
       setTimeout(() => {
          dialogRef.close();
-      }, 8000)
+      }, 3000)
     })
 
   }
